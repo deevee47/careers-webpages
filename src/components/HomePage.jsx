@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Carousel from "./Carousel";
 import EnhancedCarousel from "./EnhancedCarousel";
 import CareerParallax from "./CareerParallax";
+import { Link } from "react-router-dom";
 
 const queries = [
   {
@@ -119,10 +120,11 @@ const HomePage = () => {
       {/* Hero Section */}
       <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px]">
         <img
-          src="/api/placeholder/1200/800"
+          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
           alt="Offshore Rig"
           className="absolute top-0 left-0 w-full h-full object-cover z-10"
         />
+
         <div
           className={`text-center text-white z-20 ${
             isHeroVisible
@@ -175,9 +177,11 @@ const HomePage = () => {
             <button className="bg-sky-400 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-navy-900 transition-colors duration-300">
               Explore Products
             </button>
-            <button className="bg-transparent text-white px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 transition-colors duration-300">
-              Explore Services
-            </button>
+            <Link to="/services">
+              <button className="bg-transparent text-white px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 transition-colors duration-300">
+                Explore Services
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -204,13 +208,15 @@ const HomePage = () => {
               provide customized tools that enhance operational efficiency and
               boost productivity.
             </p>
-            <button className="bg-sky-400 text-white px-6 py-3 rounded-full text-xl font-semibold hover:bg-navy-900 transition-colors duration-300 mt-8">
-              Contact Us
-            </button>
+            <Link to="/contact">
+              <button className="bg-sky-400 text-white px-6 py-3 rounded-full text-xl font-semibold hover:bg-navy-900 transition-colors duration-300 mt-8">
+                Contact Us
+              </button>
+            </Link>
           </div>
           <div className="w-2/5">
             <img
-              src="https://images.unsplash.com/photo-1593642632883-e4e1c0f3e8c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDB8fGltYWdlfGVufDB8fHx8MTY5NzAxNTc5OQ&ixlib=rb-4.0.3&q=80&w=800"
+              src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
               alt="About Us"
               className="w-full rounded-lg"
             />
@@ -218,12 +224,17 @@ const HomePage = () => {
         </div>
       </div>
 
-          <div className="flex w-[75%] mx-auto flex-col gap-32">
-              <h1 className="text-5xl font-bold">| Our Services</h1>
-          <EnhancedCarousel />
-              <Carousel />
-          </div>
-          <CareerParallax />
+      <div className="flex w-[75%] mx-auto flex-col gap-20">
+        <h1 className="text-5xl font-bold">| Our Services</h1>
+        <EnhancedCarousel />
+        <Link to="/services">
+          <button className="bg-transparent text-white bg-blue-400 font-bold px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 hover:text-blue-400 hover:border-blue-400 transition-colors duration-300">
+            Know more services
+          </button>
+        </Link>
+        <Carousel />
+      </div>
+      <CareerParallax />
 
       {/* Common Queries Section */}
       <div className="bg-white py-16">

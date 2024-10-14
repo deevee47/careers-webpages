@@ -40,7 +40,7 @@ const ContactUs = () => {
       >
         {/* Title */}
         <motion.h1 className="text-5xl font-bold mb-4" variants={fadeInUp}>
-          Carrer
+          Career
         </motion.h1>
 
         {/* Description */}

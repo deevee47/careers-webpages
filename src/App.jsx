@@ -7,6 +7,8 @@ import SecondPage from "./components/SecondPage";
 import HomePage from "./components/HomePage";
 
 import Navbar from "./components/Navbar";
+import LastPage from "./components/LastPage";
+import About from "./components/About";
 
 function App() {
   return (
@@ -15,10 +17,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/about" element={<HomePage />} />
+          <Route path="/career" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
           <Route path="/services" element={<SecondPage />} />
-          <Route path="/services" element={<SecondPage />} />
+          <Route path="/contact" element={<LastPage />} />
         </Routes>
       </Router>
     </>

@@ -204,7 +204,7 @@ const SecondPage = () => {
           <div className="bg-gray-100 rounded-lg shadow-lg p-8">
             {/* Image added here */}
             <img
-              src="https://via.placeholder.com/800x400" // Replace with a relevant image URL
+              src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" // Replace with a relevant image URL
               alt="Engineering Services Catalog"
               className="w-full h-48 object-cover rounded-t-lg mb-6"
             />
