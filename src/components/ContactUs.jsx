@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import JobApplicationSection from "./JobApplicationSection";
 
 const ContactUs = () => {
   // Animation variants for the text
@@ -20,6 +21,7 @@ const ContactUs = () => {
   };
 
   return (
+    <>
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
@@ -67,6 +69,8 @@ const ContactUs = () => {
         </svg>
       </motion.div>
     </div>
+    <JobApplicationSection />
+    </>
   );
 };
 
