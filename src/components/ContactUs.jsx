@@ -22,7 +22,7 @@ const ContactUs = () => {
 
   return (
     <>
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative h-screen flex items-center justify-center overflow-hidden -mt-20">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"

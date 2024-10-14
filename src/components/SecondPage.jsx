@@ -46,7 +46,7 @@ const SecondPage = () => {
     <div className="font-sans bg-gray-50">
       {/* Hero Section */}
       <section
-        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
+        className="relative h-screen -mt-10 flex items-center justify-center bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",

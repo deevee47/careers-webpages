@@ -37,7 +37,7 @@ const About = () => {
   return (
     <div>
       {/* Landing Section */}
-      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden">
+      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] -mt-20 ">
         <motion.img
           src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
           alt="Offshore Rig"
@@ -53,6 +53,10 @@ const About = () => {
           animate="visible"
         >
           <h1 className="text-5xl font-bold mb-4">About Us</h1>
+          <h3 className="text-xl w-[50%] mx-auto mb-4">
+            Explore our journey and mission as industry leaders, committed to
+            transforming the oil and gas sector with innovative solutions.
+          </h3>
         </motion.div>
       </div>
 
@@ -137,12 +141,15 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-8">
               Listen What Our Experts Have To Say
             </h2>
-            <motion.img
-              src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            <motion.video
+              src="https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your desired video URL
               alt="Vision"
               className="rounded-lg shadow-lg mb-6 w-full md:w-3/4 mx-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
+              autoPlay
+              loop
+              muted
             />
           </div>
         </div>

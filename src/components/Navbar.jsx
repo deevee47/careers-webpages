@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="logo ml-10">
         <img src="/logo.jpg" alt="Company Logo" className="h-12 w-auto" />
       </div>
-      <main className="flex justify-end space-x-8 w-3/4">
+      <main className="flex justify-end space-x-8 w-3/4 mr-10">
         <HashLink
           to="/"
           className="text-gray-800 hover:text-blue-500 transition-colors"

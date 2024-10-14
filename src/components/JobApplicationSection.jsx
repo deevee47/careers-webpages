@@ -119,43 +119,6 @@ const JobApplicationSection = () => {
         </div>
 
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Experience</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Join a team that offers unparalleled experiences and opportunities
-            for growth.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                Collaborative Environment
-              </h3>
-              <p className="text-gray-600">
-                Work alongside passionate individuals who inspire and support
-                each other.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                Skill Development
-              </h3>
-              <p className="text-gray-600">
-                Access to resources and training that help you develop new
-                skills and advance your career.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                Impactful Work
-              </h3>
-              <p className="text-gray-600">
-                Be part of projects that positively impact the community and the
-                environment.
-              </p>
-            </AnimatedSection>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl font-bold text-green-800 mb-4">
             Let's Join With Us!
           </h2>
@@ -211,6 +174,42 @@ const JobApplicationSection = () => {
             </form>
           </AnimatedSection>
         </div>
+        <AnimatedSection className="text-center mb-16 mt-14">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Experience</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            Join a team that offers unparalleled experiences and opportunities
+            for growth.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                Collaborative Environment
+              </h3>
+              <p className="text-gray-600">
+                Work alongside passionate individuals who inspire and support
+                each other.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                Skill Development
+              </h3>
+              <p className="text-gray-600">
+                Access to resources and training that help you develop new
+                skills and advance your career.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                Impactful Work
+              </h3>
+              <p className="text-gray-600">
+                Be part of projects that positively impact the community and the
+                environment.
+              </p>
+            </AnimatedSection>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

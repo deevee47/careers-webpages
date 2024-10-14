@@ -60,7 +60,7 @@ export const projects = [
     description:
       "Developing a large-scale renewable energy program to reduce carbon emissions.",
     image:
-      "https://images.unsplash.com/photo-1586982599688-8dd7c8b3a025?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   },
   {
     title: "First-of-a-kind waste to fuel plant",

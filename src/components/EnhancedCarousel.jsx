@@ -5,7 +5,7 @@ const carouselItems = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1593642632883-e4e1c0f3e8c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDB8fGltYWdlfGVufDB8fHx8MTY5NzAxNTc5OQ&ixlib=rb-4.0.3&q=80&w=800",
+      "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     title: "Nature's Beauty",
     description:
       "Experience the tranquility of nature's most beautiful landscapes.",
@@ -13,28 +13,28 @@ const carouselItems = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1512426478651-e8e8f848f858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGltYWdlfGVufDB8fHx8MTY5NzAxNTg0Nw&ixlib=rb-4.0.3&q=80&w=800",
+      "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     title: "Urban Exploration",
     description: "Discover the hidden gems of bustling city life.",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1593642632784-e3f0f75f1c35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDIyfHxpbWFnZXxlbnwwfHx8fDE2OTcwMTU5Mzc&ixlib=rb-4.0.3&q=80&w=800",
+      "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     title: "Adventure Awaits",
     description: "Join us on exciting adventures and explore the unknown.",
   },
   {
     id: 4,
     image:
-      "https://images.unsplash.com/photo-1601457361311-48c3e5c7b241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGltYWdlfGVufDB8fHx8MTY5NzAxNTg1MA&ixlib=rb-4.0.3&q=80&w=800",
+      "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     title: "Culinary Delights",
     description: "Savor the flavors of world cuisines and culinary arts.",
   },
   {
     id: 5,
     image:
-      "https://images.unsplash.com/photo-1541631232617-e303445f8c8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGltYWdlfGVufDB8fHx8MTY5NzAxNTg1NQ&ixlib=rb-4.0.3&q=80&w=800",
+      "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     title: "Serene Landscapes",
     description: "Immerse yourself in the calm of serene landscapes.",
   },
