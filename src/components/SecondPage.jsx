@@ -103,7 +103,7 @@ const SecondPage = () => {
           <p className="text-xl text-center mb-12 text-gray-600">
             Comprehensive services tailored to your needs
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
