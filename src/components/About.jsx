@@ -10,10 +10,14 @@ const slideInFromTop = {
   hidden: { y: -300 }, // Sharp slide in from the left
   visible: { x: 0, transition: { duration: 1.5} },
 };
+const slideInFromBottom = {
+  hidden: { y: 40 }, // Sharp slide in from the left
+  visible: { y: 0, transition: { duration: 0.5} },
+};
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 }, // Sharp slide in from the left
-  visible: { x: 0, opacity:1, transition: { duration: 0.5 } },
+  visible: { x: 0, opacity:1, transition: { duration: 1.0 } },
 };
 
 const fadeInFromRight = {
@@ -260,12 +264,14 @@ const About = () => {
           </div>
         </div>
       </AnimatedSection>
-      <AnimatedSection>
+
         <div className="w-full bg-[#1D3D71] py-20">
-          <div className="max-w-7xl mx-auto text-center text-white px-4">
+        <div className="max-w-7xl mx-auto text-center text-white px-4">
+                <AnimatedSection animation={slideInFromBottom}>
             <h2 className="text-4xl font-bold underline-title-white mb-8 font-yaro">
               What Our Clients Say
             </h2>
+            </AnimatedSection>
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
               variants={staggerChildren}
@@ -308,7 +314,6 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </AnimatedSection>
     </div>
   );
 };
