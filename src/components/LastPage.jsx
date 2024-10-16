@@ -4,7 +4,7 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 import "../contact.scss"; // Import the combined CSS file
 
-const LastPage  = () => {
+const LastPage = () => {
   const headerRef = useRef();
   const para1Ref = useRef();
   const para2Ref = useRef();

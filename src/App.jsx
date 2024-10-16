@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css";
-import ContactUs from "./components/ContactUs";
+import Career from "./components/Career";
 
 import SecondPage from "./components/SecondPage";
 import HomePage from "./components/HomePage";
@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/career" element={<ContactUs />} />
+          <Route path="/career" element={<Career />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<SecondPage />} />
           <Route path="/contact" element={<LastPage />} />

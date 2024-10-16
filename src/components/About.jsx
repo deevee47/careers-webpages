@@ -11,6 +11,11 @@ const slideInFromTop = {
   visible: { x: 0, transition: { duration: 1.5} },
 };
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 50 }, // Sharp slide in from the left
+  visible: { x: 0, opacity:1, transition: { duration: 0.5 } },
+};
+
 const fadeInFromRight = {
   hidden: { opacity: 0, x: 50 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
@@ -250,6 +255,55 @@ const About = () => {
                     <p className="text-sm">{member.role}</p>
                   </motion.div>
                 </AnimatedSection>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
+      <AnimatedSection>
+        <div className="w-full bg-[#1D3D71] py-20">
+          <div className="max-w-7xl mx-auto text-center text-white px-4">
+            <h2 className="text-4xl font-bold underline-title-white mb-8 font-yaro">
+              What Our Clients Say
+            </h2>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              variants={staggerChildren}
+            >
+              {[
+                {
+                  name: "Joseph from Denmark",
+                  img: "https://randomuser.me/api/portraits/men/32.jpg",
+                },
+                {
+                  name: "Jade from USA",
+                  img: "https://randomuser.me/api/portraits/women/32.jpg",
+                },
+                {
+                  name: "Xin Paul from Singapore",
+                  img: "https://randomuser.me/api/portraits/men/33.jpg",
+                },
+              ].map((client, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-[#00B3FF26] text-white p-6 rounded-lg shadow-lg"
+                  variants={fadeIn}
+                  whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
+                >
+                  <p className="text-gray-400">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Proin consequat, risus vitae scelerisque tincidunt, purus
+                    turpis cursus erat, vel faucibus ligula lorem nec lectus."
+                  </p>
+                  <div className="mt-4 flex flex-col items-center">
+                    <img
+                      src={client.img}
+                      alt={client.name}
+                      className="w-12 h-12 rounded-full mb-2 shadow-md"
+                    />
+                    <p className="font-semibold text-white ">{client.name}</p>
+                  </div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
