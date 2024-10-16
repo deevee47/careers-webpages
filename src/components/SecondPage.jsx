@@ -52,7 +52,7 @@ const SecondPage = () => {
             "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-blue-500 opacity-60"></div>
         <motion.div
           className="relative z-10 text-center text-white"
           initial="hidden"
@@ -73,6 +73,19 @@ const SecondPage = () => {
             Explore Our Services
           </motion.button>
         </motion.div>
+        <div className="wave-container">
+            <svg
+              className="wave"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+            >
+              <path
+                fill="#ffffff"
+                fillOpacity="1"
+                d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,149.3C672,160,768,192,864,186.7C960,181,1056,139,1152,117.3C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
+          </div>
       </section>
 
       {/* Services Section */}
@@ -130,7 +143,7 @@ const SecondPage = () => {
           <p className="text-xl text-center mb-12 text-gray-600">
             Delivering excellence through expertise and innovation
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {capabilities.map((capability, index) => (
               <motion.div
                 key={index}

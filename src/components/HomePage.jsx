@@ -144,7 +144,7 @@ const HomePage = () => {
   return (
     <div className="font-montserrat">
       {/* Hero Section */}
-      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] -mt-20 ">
+      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[350px] -mt-10">
         <img
           src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
           alt="Offshore Rig"
@@ -159,7 +159,7 @@ const HomePage = () => {
           } transition-all duration-1500 ease-in-out`}
         >
           <h1 className="text-5xl font-bold mb-2">Your Trusted Partner In</h1>
-          <h1 className="text-5xl font-bold text-sky-400 mb-4">
+          <h1 className="text-5xl font-bold text-sky-400 mb-4 font-yaro">
             Upstream Engineering
           </h1>
 
@@ -216,7 +216,7 @@ const HomePage = () => {
 
       {/* About Us Section */}
       <div
-        className="flex justify-center items-center h-screen bg-white -mt-32"
+        className="flex justify-center items-center h-screen bg-white -mt-32 "
         ref={aboutSectionRef}
       >
         <div
@@ -228,7 +228,7 @@ const HomePage = () => {
         >
           <AnimatedSection animation={slideInFromLeft}>
             <div className="mr-5">
-              <h2 className="text-4xl font-bold mb-6 text-navy-900">
+              <h2 className="text-4xl font-bold mb-6 text-navy-900 font-yaro">
                 About Us
               </h2>
               <p className="text-lg mb-5 leading-relaxed">
@@ -257,28 +257,33 @@ const HomePage = () => {
       </div>
 
       <div className="flex w-[75%] mx-auto flex-col gap-20">
-        <h1 className="text-5xl font-bold">| Our Services</h1>
+        <h1 className="text-5xl font-bold font-yaro">| Our Services</h1>
         <EnhancedCarousel />
-        <Link to="/services">
-          <button className="bg-transparent text-white bg-blue-400 font-bold px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 hover:text-blue-400 hover:border-blue-400 transition-colors duration-300">
-            Know more services
+        <Link className="mx-auto mb-10 mt-20" to="/services">
+          <button className="text-white bg-blue-400 font-bold px-8 py-3 rounded-full text-lg border border-blue hover:bg-white/20 hover:text-blue-400 hover:border-blue-400 transition-colors duration-300">
+            View More
           </button>
         </Link>
-        <Carousel />
       </div>
+      <Carousel />
       <CareerParallax />
 
       {/* Common Queries Section */}
       <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4 text-navy-900">
+        <div className="p-20 mx-auto text-center">
+          <h2 className="text-5xl text-left font-bold mb-10 text-navy-900 font-yaro">
             Common Queries
           </h2>
-          <p className="text-xl mb-12">Your Answers to Common Questions</p>
+          <p className="text-xl text-left mb-12">
+            Your Answers to Common Questions
+          </p>
 
           <div className="grid grid-cols-2 gap-8">
             {queries.map((query, index) => (
-              <div key={query.id} className="text-left">
+              <div
+                key={query.id}
+                className="text-left border-b-2 border-black p-10"
+              >
                 <button
                   onClick={() => toggleQuery(index)}
                   className="w-full text-left text-lg font-semibold mb-2 flex justify-between items-center"
@@ -288,11 +293,15 @@ const HomePage = () => {
                   </span>
                   <span>{activeIndex === index ? "▲" : "▶"}</span>
                 </button>
-                {activeIndex === index && (
-                  <p className="mt-2 p-4 bg-gray-100 rounded-lg">
-                    {query.answer}
-                  </p>
-                )}
+                <div
+                  className={`transition-all duration-500 overflow-hidden ${
+                    activeIndex === index
+                      ? "max-h-96 opacity-100 p-4"
+                      : "max-h-0 opacity-0 p-0"
+                  } bg-gray-100 rounded-lg`}
+                >
+                  <p className="mt-2">{query.answer}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -300,23 +309,23 @@ const HomePage = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="bg-gray-100 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-navy-900">
+      <div className="bg-white py-16">
+        <div className="mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-navy-900 font-yaro">
             Still have doubts? Let's Get In Touch
           </h2>
-          <div className="flex justify-center space-x-8">
-            <div className="bg-white p-8 rounded-lg shadow-md text-center w-64">
+          <div className="flex justify-center space-x-16">
+            <div className="bg-blue-100 p-4 px-10 rounded-[50px] w-72 shadow-lg shadow-blue-100 text-center ">
               <FaMapMarkerAlt className="text-5xl text-sky-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Address</h3>
               <p>Sepco Township Durgapur, WB</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md text-center w-64">
+            <div className="bg-blue-100 p-4 px-10 rounded-[50px] w-72 shadow-lg  shadow-blue-100 text-center ">
               <FaEnvelope className="text-5xl text-sky-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <p>xyz@anvey.in</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md text-center w-64">
+            <div className="bg-blue-100 p-4 px-10 rounded-[50px] w-72 shadow-lg shadow-blue-100 text-center ">
               <FaPhoneAlt className="text-5xl text-sky-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
               <p>+91 99999 99999</p>

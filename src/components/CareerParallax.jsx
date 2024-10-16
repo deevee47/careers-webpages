@@ -42,9 +42,19 @@ const CareerParallax = () => {
         />
       </svg>
 
+      {/* <svg
+        className="absolute top-0 left-0 w-full h-40 z-10"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path fill="#ffffff" d="M0,100 C50,0 50,0 100,100 Z" />
+      </svg> */}
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center mt-10 px-6">
-        <h2 className="text-white text-6xl font-bold mb-4">| Career</h2>
+        <h2 className="text-white text-6xl font-bold mb-4 font-yaro">
+          | Career
+        </h2>
         <h3 className="text-white text-4xl font-semibold mb-6">
           Find A Job At Anvey
         </h3>

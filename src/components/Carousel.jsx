@@ -38,17 +38,6 @@ const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const nextSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-  };
-
-  const prevSlide = () => {
-    setActiveIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + carouselItems.length) % carouselItems.length
-    );
-  };
-
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
   };
@@ -57,25 +46,36 @@ const Carousel = () => {
     setHoveredIndex(null);
   };
 
+  const getTranslateX = () => {
+    if (hoveredIndex === null) {
+      return `translateX(-${activeIndex * 20}%)`;
+    } else if (hoveredIndex === activeIndex) {
+      return `translateX(-${activeIndex * 20}%)`;
+    } else {
+      return `translateX(-${activeIndex * 20}%)`;
+    }
+  };
+
   return (
-    <div className="relative w-full mx-auto overflow-hidden">
+    <div className="relative max-w-full mx-auto overflow-hidden">
       <div
-        className="flex transition-transform duration-300 ease-in-out"
-        style={{ transform: `translateX(-${activeIndex * 20}%)` }}
+        className="flex max-w-[50] transition-transform duration-300 ease-in-out"
+        style={{ transform: getTranslateX() }}
       >
         {carouselItems.map((item, index) => (
           <div
             key={item.id}
             className="flex-shrink-0 px-1 transition-all duration-300 ease-in-out"
             style={{
-              width: hoveredIndex === index ? "60%" : "20%",
+              width: hoveredIndex === index ? "50%" : "20%",
               opacity:
                 hoveredIndex === null || hoveredIndex === index ? 1 : 0.6,
+              maxWidth: "50%", // Ensures no item grows beyond 50% of the screen
             }}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="relative overflow-hidden rounded-lg shadow-lg group h-64">
+            <div className="relative  overflow-hidden rounded-lg shadow-lg group h-[72vh]">
               <img
                 src={item.image}
                 alt={item.title}
@@ -90,18 +90,6 @@ const Carousel = () => {
           </div>
         ))}
       </div>
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors duration-200 z-10"
-      >
-        <ChevronLeft className="w-6 h-6 text-gray-800" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors duration-200 z-10"
-      >
-        <ChevronRight className="w-6 h-6 text-gray-800" />
-      </button>
     </div>
   );
 };
