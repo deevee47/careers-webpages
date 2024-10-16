@@ -35,9 +35,9 @@ const AnimatedSection = ({ children }) => {
 
 const About = () => {
   return (
-    <div>
+    <div className="font-montserrat">
       {/* Landing Section */}
-      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] -mt-20 ">
+      <div className="relative mx-auto w-full py-40 flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] ">
         <motion.img
           src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
           alt="Offshore Rig"
@@ -52,7 +52,7 @@ const About = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="text-5xl font-bold mb-4">About Us</h1>
+          <h1 className="text-5xl font-bold mb-4 font-yaro">About Us</h1>
           <h3 className="text-xl w-[50%] mx-auto mb-4">
             Explore our journey and mission as industry leaders, committed to
             transforming the oil and gas sector with innovative solutions.
@@ -65,11 +65,13 @@ const About = () => {
         <div className="w-full py-20">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
             <div className="md:w-1/2 text-left mr-10">
-              <h2 className="text-4xl font-bold mb-4 text-[#1D3D71]">
+              <h2 className="text-4xl font-bold mb-4 underline-title-left text-[#1D3D71] font-yaro">
                 About Us
               </h2>
-              <p className="text-lg mb-6">
+              <h2 className="text-xl mb-4 text-[#1D3D71]">
                 Redefining Energy Solutions with Expertise and Innovation.{" "}
+              </h2>
+              <p className="text-lg mb-6">
                 <br />
                 Since our founding in 2022, Anvey Industries Pvt. Ltd. has been
                 dedicated to revolutionizing the oil and gas industry. With a
@@ -78,11 +80,11 @@ const About = () => {
                 costs, and drive sustainable growth for our clients worldwide.
               </p>
               <motion.button
-                className="bg-[#1D3D71] text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300"
+                className="bg-[#1D3D71] text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300 "
                 whileHover={{ scale: 1.05, backgroundColor: "#14274E" }}
                 whileTap={{ scale: 0.95 }}
               >
-                About Us
+                ABOUT US
               </motion.button>
             </div>
             <motion.div
@@ -93,7 +95,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                 alt="Oil Rig"
-                className="rounded-lg shadow-lg w-full"
+                className="rounded-lg shadow-lg w-[80%]"
               />
             </motion.div>
           </div>
@@ -104,7 +106,7 @@ const About = () => {
       <AnimatedSection>
         <div className="w-full py-20">
           <div className="max-w-7xl mx-auto text-center text-black px-4">
-            <h2 className="text-4xl font-bold mb-8">
+            <h2 className="text-4xl font-bold underline-title mb-8 font-yaro">
               The Pillars of Our Success
             </h2>
             <motion.div
@@ -122,7 +124,9 @@ const About = () => {
                   variants={fadeIn}
                   whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
                 >
-                  <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+                  <h3 className="text-2xl font-semibold mb-4 ">
+                    {title}
+                  </h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Proin consequat, risus vitae scelerisque tincidunt.
@@ -138,7 +142,7 @@ const About = () => {
       <AnimatedSection>
         <div className="w-full bg-[#1D3D71] py-20">
           <div className="max-w-7xl mx-auto text-center text-white px-4">
-            <h2 className="text-4xl font-bold mb-8">
+            <h2 className="text-4xl font-bold mb-8 font-yaro">
               Listen What Our Experts Have To Say
             </h2>
             <motion.video
@@ -159,7 +163,7 @@ const About = () => {
       <AnimatedSection>
         <div className="w-full py-20">
           <div className="max-w-7xl mx-auto text-center px-4">
-            <h2 className="text-4xl font-bold mb-12 text-[#1D3D71]">
+            <h2 className="text-4xl font-bold mb-12 underline-title text-[#1D3D71] font-yaro">
               Meet Our Team
             </h2>
             <motion.div
@@ -190,16 +194,17 @@ const About = () => {
               ].map((member, index) => (
                 <motion.div
                   key={index}
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center py-14 rounded-[40%] transition-colors duration-300 hover:bg-blue-100"
                   variants={fadeIn}
-                  whileHover={{ scale: 1.1 }}
                 >
                   <img
                     src={member.img}
                     alt={member.name}
                     className="w-40 h-40 rounded-full mb-4 shadow-lg"
                   />
-                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <h3 className="text-lg font-semibold">
+                    {member.name}
+                  </h3>
                   <p className="text-sm">{member.role}</p>
                 </motion.div>
               ))}
@@ -212,15 +217,26 @@ const About = () => {
       <AnimatedSection>
         <div className="w-full bg-[#1D3D71] py-20">
           <div className="max-w-7xl mx-auto text-center text-white px-4">
-            <h2 className="text-4xl font-bold mb-8">What Our Clients Say</h2>
+            <h2 className="text-4xl font-bold underline-title-white mb-8 font-yaro">
+              What Our Clients Say
+            </h2>
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
               variants={staggerChildren}
             >
               {[
-                "Joseph from Denmark",
-                "Jade from USA",
-                "Xin Paul from Singapore",
+                {
+                  name: "Joseph from Denmark",
+                  img: "https://randomuser.me/api/portraits/men/32.jpg",
+                },
+                {
+                  name: "Jade from USA",
+                  img: "https://randomuser.me/api/portraits/women/32.jpg",
+                },
+                {
+                  name: "Xin Paul from Singapore",
+                  img: "https://randomuser.me/api/portraits/men/33.jpg",
+                },
               ].map((client, index) => (
                 <motion.div
                   key={index}
@@ -228,12 +244,21 @@ const About = () => {
                   variants={fadeIn}
                   whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
                 >
-                  <p>
+                  <p className="text-gray-400">
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Proin consequat, risus vitae scelerisque tincidunt, purus
                     turpis cursus erat, vel faucibus ligula lorem nec lectus."
                   </p>
-                  <p className="mt-4 font-semibold">{client}</p>
+                  <div className="mt-4 flex flex-col items-center">
+                    <img
+                      src={client.img}
+                      alt={client.name}
+                      className="w-12 h-12 rounded-full mb-2 shadow-md"
+                    />
+                    <p className="font-semibold text-white ">
+                      {client.name}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
