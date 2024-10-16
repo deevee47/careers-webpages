@@ -71,11 +71,13 @@ const About = () => {
     <div className="font-montserrat">
       {/* Landing Section */}
       <div className="relative mx-auto w-full py-40 flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] ">
-        <img
-          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-          alt="Offshore Rig"
-          className="absolute top-0 left-0 w-full h-full object-cover z-10"
-        />
+
+          <img
+            src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            alt="Offshore Rig"
+            className="absolute top-0 left-0 w-full h-full object-cover z-10"
+          />
+
         <motion.div
           className="relative z-20 text-center text-white px-4"
           variants={fadeInFromBottom}
@@ -189,7 +191,7 @@ const About = () => {
 
       {/* Expert Section */}
 
-      <div className="w-full bg-[#1D3D71] py-20">
+      <div className="w-full pb-[30vw] pt-10 mb-72 bg-[#1D3D71]">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <h2 className="text-4xl font-bold mb-8 font-yaro">
             Listen What Our Experts Have To Say
@@ -198,7 +200,7 @@ const About = () => {
             <motion.video
               src="https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your desired video URL
               alt="Vision"
-              className="rounded-lg shadow-lg mb-6 w-full md:w-3/4 mx-auto"
+              className="rounded-lg shadow-lg mb-6 w-[80vw] mx-auto absolute"
               initial="hidden"
               animate="visible"
               autoPlay
@@ -265,55 +267,55 @@ const About = () => {
         </div>
       </AnimatedSection>
 
-        <div className="w-full bg-[#1D3D71] py-20">
+      <div className="w-full bg-[#1D3D71] py-20">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
-                <AnimatedSection animation={slideInFromBottom}>
+          <AnimatedSection animation={slideInFromBottom}>
             <h2 className="text-4xl font-bold underline-title-white mb-8 font-yaro">
               What Our Clients Say
             </h2>
-            </AnimatedSection>
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              variants={staggerChildren}
-            >
-              {[
-                {
-                  name: "Joseph from Denmark",
-                  img: "https://randomuser.me/api/portraits/men/32.jpg",
-                },
-                {
-                  name: "Jade from USA",
-                  img: "https://randomuser.me/api/portraits/women/32.jpg",
-                },
-                {
-                  name: "Xin Paul from Singapore",
-                  img: "https://randomuser.me/api/portraits/men/33.jpg",
-                },
-              ].map((client, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-[#00B3FF26] text-white p-6 rounded-lg shadow-lg"
-                  variants={fadeIn}
-                  whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
-                >
-                  <p className="text-gray-400">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin consequat, risus vitae scelerisque tincidunt, purus
-                    turpis cursus erat, vel faucibus ligula lorem nec lectus."
-                  </p>
-                  <div className="mt-4 flex flex-col items-center">
-                    <img
-                      src={client.img}
-                      alt={client.name}
-                      className="w-12 h-12 rounded-full mb-2 shadow-md"
-                    />
-                    <p className="font-semibold text-white ">{client.name}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+          </AnimatedSection>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerChildren}
+          >
+            {[
+              {
+                name: "Joseph from Denmark",
+                img: "https://randomuser.me/api/portraits/men/32.jpg",
+              },
+              {
+                name: "Jade from USA",
+                img: "https://randomuser.me/api/portraits/women/32.jpg",
+              },
+              {
+                name: "Xin Paul from Singapore",
+                img: "https://randomuser.me/api/portraits/men/33.jpg",
+              },
+            ].map((client, index) => (
+              <motion.div
+                key={index}
+                className="bg-[#00B3FF26] text-white p-6 rounded-lg shadow-lg"
+                variants={fadeIn}
+                whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
+              >
+                <p className="text-gray-400">
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Proin consequat, risus vitae scelerisque tincidunt, purus
+                  turpis cursus erat, vel faucibus ligula lorem nec lectus."
+                </p>
+                <div className="mt-4 flex flex-col items-center">
+                  <img
+                    src={client.img}
+                    alt={client.name}
+                    className="w-12 h-12 rounded-full mb-2 shadow-md"
+                  />
+                  <p className="font-semibold text-white ">{client.name}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
+      </div>
     </div>
   );
 };

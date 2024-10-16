@@ -174,7 +174,7 @@ const JobApplicationSection = () => {
             </form>
           </AnimatedSection>
         </div>
-        <AnimatedSection className="text-center mb-16 mt-14">
+        <AnimatedSection className="text-center mb-16 mt-14                                                                      ">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Experience</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Join a team that offers unparalleled experiences and opportunities

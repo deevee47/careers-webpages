@@ -4,6 +4,31 @@ import Carousel from "./Carousel";
 import EnhancedCarousel from "./EnhancedCarousel";
 import CareerParallax from "./CareerParallax";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const slideInFromLeft = {
+  hidden: { x: -200 }, // Sharp slide in from the left
+  visible: { x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const AnimatedSection = ({ children, animation = fadeInFromBottom }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={animation}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const queries = [
   {
@@ -77,6 +102,7 @@ const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const aboutSectionRef = useRef(null);
 
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsHeroVisible(true);
@@ -137,35 +163,37 @@ const HomePage = () => {
             Upstream Engineering
           </h1>
 
-          <div className="flex flex-col items-center mb-4">
+          <div className="flex flex-col items-center">
             <svg
-              className={`w-[500px] h-5 ${
-                linesVisible ? "opacity-100" : "opacity-0"
-              } transition-all duration-500 ease-in-out`}
+              className={`w-[500px] h-5 transition-all duration-500 ease-in-out ${
+                linesVisible ? "stroke-animate" : ""
+              }`}
               viewBox="0 0 500 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M0 10 Q 250 0 500 10"
-                stroke="#00B3FF"
+                stroke="#ffffff"
                 strokeWidth="2"
                 fill="transparent"
+                className="line"
               />
             </svg>
             <svg
-              className={`w-[500px] h-5 ${
-                linesVisible ? "opacity-100" : "opacity-0"
-              } transition-all duration-500 ease-in-out`}
-              viewBox="0 0 500 20"
-              fill="none"
+              className={`w-[500px] h-5 transition-all duration-500 ease-in-out mr-10 -mt-3 ${
+                linesVisible ? "stroke-animate" : ""
+              }`}
+              viewBox="0 0 400 20"
+              fill="ffffff"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M0 10 Q 250 0 500 10"
-                stroke="#00B3FF"
+                stroke="#ffffff"
                 strokeWidth="2"
                 fill="transparent"
+                className="line"
               />
             </svg>
           </div>
@@ -192,29 +220,33 @@ const HomePage = () => {
         ref={aboutSectionRef}
       >
         <div
-          className={`flex justify-between items-start max-w-6xl w-4/5 p-10 bg-blue-50 rounded-3xl shadow-lg ${
+          className={`flex justify-between items-start w-[80%] mt-10 p-10 bg-blue-50 rounded-3xl shadow-lg ${
             isAboutVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-12"
           } transition-all duration-1000 ease-in-out`}
         >
-          <div className="w-3/5 mr-5">
-            <h2 className="text-4xl font-bold mb-6 text-navy-900">About Us</h2>
-            <p className="text-lg mb-5 leading-relaxed">
-              Founded in 2022, we at Anvey are dedicated to delivering
-              innovative engineering solutions. Specializing in cutting-edge
-              technologies such as stimulation tools, artificial lift systems,
-              well completions, gas environment packers, and maglev pumps, we
-              provide customized tools that enhance operational efficiency and
-              boost productivity.
-            </p>
-            <Link to="/contact">
-              <button className="bg-sky-400 text-white px-6 py-3 rounded-full text-xl font-semibold hover:bg-navy-900 transition-colors duration-300 mt-8">
-                Contact Us
-              </button>
-            </Link>
-          </div>
-          <div className="w-2/5">
+          <AnimatedSection animation={slideInFromLeft}>
+            <div className="mr-5">
+              <h2 className="text-4xl font-bold mb-6 text-navy-900">
+                About Us
+              </h2>
+              <p className="text-lg mb-5 leading-relaxed">
+                Founded in 2022, we at Anvey are dedicated to delivering
+                innovative engineering solutions. Specializing in cutting-edge
+                technologies such as stimulation tools, artificial lift systems,
+                well completions, gas environment packers, and maglev pumps, we
+                provide customized tools that enhance operational efficiency and
+                boost productivity.
+              </p>
+              <Link to="/contact">
+                <button className="bg-sky-400 text-white px-6 py-3 rounded-full text-xl font-semibold hover:bg-navy-900 transition-colors duration-300 mt-8">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+          </AnimatedSection>
+          <div className="w-full">
             <img
               src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
               alt="About Us"
