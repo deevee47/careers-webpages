@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaPlay, FaPause } from "react-icons/fa"; // Font Awesome icons for play/pause
 
 const slideInFromLeft = {
   hidden: { x: -200 }, // Sharp slide in from the left
@@ -67,16 +68,27 @@ const AnimatedSection = ({ children, animation = fadeInFromBottom }) => {
 };
 
 const About = () => {
+  const [isPlaying, setIsPlaying] = useState(true); // State to track video play/pause
+  const videoRef = useRef(null); // Reference to video element
+
+  // Function to toggle play/pause
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
   return (
     <div className="font-montserrat">
       {/* Landing Section */}
       <div className="relative mx-auto w-full py-40 flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] ">
-
-          <img
-            src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-            alt="Offshore Rig"
-            className="absolute top-0 left-0 w-full h-full object-cover z-10"
-          />
+        <img
+          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+          alt="Offshore Rig"
+          className="absolute top-0 left-0 w-full h-full object-cover z-10"
+        />
 
         <motion.div
           className="relative z-20 text-center text-white px-4"
@@ -198,6 +210,7 @@ const About = () => {
           </h2>
           <AnimatedSection animation={fadeIn3D}>
             <motion.video
+              ref={videoRef} // Reference the video
               src="https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your desired video URL
               alt="Vision"
               className="rounded-lg shadow-lg mb-6 w-[80vw] mx-auto absolute"
@@ -208,6 +221,14 @@ const About = () => {
               muted
             />
           </AnimatedSection>
+
+          {/* Play/Pause button */}
+          <button
+            onClick={togglePlayPause}
+            className="mt-8 text-white text-2xl bg-[#ffcc00] p-4 rounded-full shadow-lg focus:outline-none"
+          >
+            {isPlaying ? <FaPause /> : <FaPlay />}
+          </button>
         </div>
       </div>
 
