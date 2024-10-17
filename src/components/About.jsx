@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaPlay, FaPause } from "react-icons/fa"; // Font Awesome icons for play/pause
+import { FaPlay, FaPause, FaTimes } from "react-icons/fa"; // Font Awesome icons for play/pause
 
 const slideInFromLeft = {
   hidden: { x: -200 }, // Sharp slide in from the left
@@ -68,18 +68,24 @@ const AnimatedSection = ({ children, animation = fadeInFromBottom }) => {
 };
 
 const About = () => {
-  const [isPlaying, setIsPlaying] = useState(true); // State to track video play/pause
-  const videoRef = useRef(null); // Reference to video element
+  const [isModalOpen, setIsModalOpen] = useState(false); // Track modal state
+  const videoRef = useRef(null); // Reference the video element
 
   // Function to toggle play/pause
-  const togglePlayPause = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
+  const toggleModal = () => {
+    setIsModalOpen((prevState) => {
+      const newState = !prevState;
+      console.log("Modal state:", newState);
+      if (newState) {
+        console.log("Opening modal, playing video...");
+      } else {
+        videoRef.current.pause(); // Pause video when closing the modal
+        console.log("Closing modal, pausing video.");
+      }
+      return newState;
+    });
   };
+
   return (
     <div className="font-montserrat">
       {/* Landing Section */}
@@ -105,42 +111,30 @@ const About = () => {
       </div>
 
       {/* About Us Section */}
-
       <div className="w-full py-20">
-        <div className=" mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+        <div className="mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           <AnimatedSection animation={slideInFromLeft}>
-            <motion.div
-              className=" ml-28 md:w-1/2 text-left mr-10"
-              variants={slideInFromLeft} // Straight slide from left
-            >
+            <div className="ml-28 md:w-1/2 text-left mr-10">
               <h2 className="text-4xl font-bold mb-4 underline-title-left text-[#1D3D71] font-yaro">
                 About Us
               </h2>
               <h2 className="text-xl mb-4 text-[#1D3D71]">
-                Redefining Energy Solutions with Expertise and Innovation.{" "}
+                Redefining Energy Solutions with Expertise and Innovation.
               </h2>
               <p className="text-lg mb-6">
-                <br />
                 Since our founding in 2022, Anvey Industries Pvt. Ltd. has been
-                dedicated to revolutionizing the oil and gas industry. With a
-                focus on advanced technologies and energy-efficient strategies,
-                we provide tailored solutions that enhance operations, reduce
-                costs, and drive sustainable growth for our clients worldwide.
+                dedicated to revolutionizing the oil and gas industry...
               </p>
-              <motion.button
-                className="bg-[#1D3D71] text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300 "
-                whileHover={{ scale: 1.05, backgroundColor: "#14274E" }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="bg-[#1D3D71] text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300">
                 ABOUT US
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
           </AnimatedSection>
           <div className="w-full mt-8 md:mt-0">
             <img
-              src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+              src="/xx.jpeg"
               alt="Oil Rig"
-              className="rounded-lg shadow-lg w-[80%]"
+              className="rounded-lg shadow-lg w-[80%] h-screen"
             />
           </div>
         </div>
@@ -203,32 +197,53 @@ const About = () => {
 
       {/* Expert Section */}
 
-      <div className="w-full pb-[30vw] pt-10 mb-72 bg-[#1D3D71]">
+      <div className="w-full pb-[30vw] pt-10 mb-72 bg-[#1D3D71] relative">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <h2 className="text-4xl font-bold mb-8 font-yaro">
             Listen What Our Experts Have To Say
           </h2>
-          <AnimatedSection animation={fadeIn3D}>
-            <motion.video
-              ref={videoRef} // Reference the video
-              src="https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your desired video URL
-              alt="Vision"
-              className="rounded-lg shadow-lg mb-6 w-[80vw] mx-auto absolute"
-              initial="hidden"
-              animate="visible"
-              autoPlay
-              loop
-              muted
-            />
-          </AnimatedSection>
 
-          {/* Play/Pause button */}
-          <button
-            onClick={togglePlayPause}
-            className="mt-8 text-white text-2xl bg-[#ffcc00] p-4 rounded-full shadow-lg focus:outline-none"
-          >
-            {isPlaying ? <FaPause /> : <FaPlay />}
-          </button>
+          {/* Video Thumbnail Section */}
+          <div className="relative w-[80vw] mx-auto">
+            {/* Video Thumbnail */}
+            <img
+              src="/xx.jpeg"
+              alt="Video Thumbnail"
+              className="rounded-lg shadow-lg w-full"
+            />
+
+            {/* Play Button Icon (Center of Video) */}
+            <button
+              onClick={toggleModal}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-5xl bg-[#ffcc00] p-6 rounded-full shadow-lg focus:outline-none"
+            >
+              <FaPlay />
+            </button>
+          </div>
+
+          {/* Fullscreen Modal for Video */}
+          {isModalOpen && (
+            <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50">
+              <div className="relative w-[80vw] h-[80vh]">
+                {/* Close Button */}
+                <button
+                  onClick={toggleModal}
+                  className="absolute top-4 right-4 text-white text-3xl p-4 z-50"
+                >
+                  <FaTimes />
+                </button>
+
+                {/* Fullscreen Video */}
+                <video
+                  ref={videoRef}
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  className="w-full h-full rounded-lg shadow-lg"
+                  controls
+                  autoPlay
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

@@ -144,76 +144,80 @@ const HomePage = () => {
   return (
     <div className="font-montserrat">
       {/* Hero Section */}
-      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[350px] -mt-10">
-        <img
-          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-          alt="Offshore Rig"
-          className="absolute top-0 left-0 w-full h-full object-cover z-10"
+      // Hero Section
+      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden -mt-10">
+        {/* Background image with semi-circle */}
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-center bg-cover rounded-b-[50%] scale-x-[1.5]"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')`,
+          }}
         />
 
-        <div
-          className={`text-center text-white z-20 ${
-            isHeroVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
-          } transition-all duration-1500 ease-in-out`}
-        >
-          <h1 className="text-5xl font-bold mb-2">Your Trusted Partner In</h1>
-          <h1 className="text-5xl font-bold text-sky-400 mb-4 font-yaro">
-            Upstream Engineering
-          </h1>
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
+          <div
+            className={`text-center text-white transition-all duration-1500 ease-in-out ${
+              isHeroVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
+            <h1 className="text-5xl font-bold mb-2">Your Trusted Partner In</h1>
+            <h1 className="text-5xl font-bold text-sky-400 mb-4 font-yaro">
+              Upstream Engineering
+            </h1>
 
-          <div className="flex flex-col items-center">
-            <svg
-              className={`w-[500px] h-5 transition-all duration-500 ease-in-out ${
-                linesVisible ? "stroke-animate" : ""
-              }`}
-              viewBox="0 0 500 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 10 Q 250 0 500 10"
-                stroke="#ffffff"
-                strokeWidth="2"
-                fill="transparent"
-                className="line"
-              />
-            </svg>
-            <svg
-              className={`w-[500px] h-5 transition-all duration-500 ease-in-out mr-10 -mt-3 ${
-                linesVisible ? "stroke-animate" : ""
-              }`}
-              viewBox="0 0 400 20"
-              fill="ffffff"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 10 Q 250 0 500 10"
-                stroke="#ffffff"
-                strokeWidth="2"
-                fill="transparent"
-                className="line"
-              />
-            </svg>
-          </div>
+            <div className="flex flex-col items-center">
+              <svg
+                className={`w-[500px] h-5 transition-all duration-500 ease-in-out ${
+                  linesVisible ? "stroke-animate" : ""
+                }`}
+                viewBox="0 0 500 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 10 Q 250 0 500 10"
+                  stroke="#ffffff"
+                  strokeWidth="2"
+                  fill="transparent"
+                  className="line"
+                />
+              </svg>
+              <svg
+                className={`w-[500px] h-5 transition-all duration-500 ease-in-out mr-10 -mt-3 ${
+                  linesVisible ? "stroke-animate" : ""
+                }`}
+                viewBox="0 0 400 20"
+                fill="ffffff"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 10 Q 250 0 500 10"
+                  stroke="#ffffff"
+                  strokeWidth="2"
+                  fill="transparent"
+                  className="line"
+                />
+              </svg>
+            </div>
 
-          <p className="text-xl mb-8">
-            Exploring New Horizons with Innovative Engineering Solutions
-          </p>
-          <div className="space-x-4">
-            <button className="bg-sky-400 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-navy-900 transition-colors duration-300">
-              Explore Products
-            </button>
-            <Link to="/services">
-              <button className="bg-transparent text-white px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 transition-colors duration-300">
-                Explore Services
+            <p className="text-xl mb-8">
+              Exploring New Horizons with Innovative Engineering Solutions
+            </p>
+            <div className="space-x-4">
+              <button className="bg-sky-400 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-navy-900 transition-colors duration-300">
+                Explore Products
               </button>
-            </Link>
+              <Link to="/services">
+                <button className="bg-transparent text-white px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 transition-colors duration-300">
+                  Explore Services
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-
       {/* About Us Section */}
       <div
         className="flex justify-center items-center h-screen bg-white -mt-32 "
@@ -255,7 +259,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
       <div className="flex w-[75%] mx-auto flex-col gap-20">
         <h1 className="text-5xl font-bold font-yaro">| Our Services</h1>
         <EnhancedCarousel />
@@ -267,7 +270,6 @@ const HomePage = () => {
       </div>
       <Carousel />
       <CareerParallax />
-
       {/* Common Queries Section */}
       <div className="bg-white py-16">
         <div className="p-20 mx-auto text-center">
@@ -307,7 +309,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
       {/* Contact Section */}
       <div className="bg-white py-16">
         <div className="mx-auto">

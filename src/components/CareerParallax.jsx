@@ -20,36 +20,11 @@ const CareerParallax = () => {
     <div className="relative h-screen overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-fixed bg-center"
+        className="absolute top-0 left-0 w-full h-full bg-center bg-cover rounded-t-[50%] mt-36 scale-x-[1.5]"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')",
-          transform: `translateY(${offset * 0}px)`, // Reduced parallax effect
+          backgroundImage: `url('https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')`,
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70" />
-
-      {/* Top Wave Shape */}
-      <svg
-        className="absolute top-0 left-0 w-full h-auto"
-        viewBox="0 0 1440 520"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="#ffffff"
-          fillOpacity="1"
-          d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,213.3C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-        />
-      </svg>
-
-      {/* <svg
-        className="absolute top-0 left-0 w-full h-40 z-10"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <path fill="#ffffff" d="M0,100 C50,0 50,0 100,100 Z" />
-      </svg> */}
-
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center mt-10 px-6">
         <h2 className="text-white text-6xl font-bold mb-4 font-yaro">
