@@ -145,8 +145,7 @@ const HomePage = () => {
   return (
     <div className="font-montserrat">
       {/* Hero Section */}
-      // Hero Section
-      <div className="relative w-full h-screen flex justify-center items-center bg-blue-50 overflow-hidden -mt-10">
+      <div className="relative w-full h-screen flex justify-center items-center overflow-hidden -mt-20">
         {/* Background image with semi-circle */}
         <div
           className="absolute top-0 left-0 w-full h-full bg-center bg-cover rounded-b-[50%] scale-x-[1.5]"
@@ -163,8 +162,10 @@ const HomePage = () => {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-5xl font-bold mb-2">Your Trusted Partner In</h1>
-            <h1 className="text-5xl font-bold text-sky-400 mb-4 font-yaro">
+            <h1 className="text-[42px] font-bold mb-2">
+              Your Trusted Partner In
+            </h1>
+            <h1 className="text-[42px] font-bold text-sky-400 mb-4 font-yaro">
               Upstream Engineering
             </h1>
 
@@ -203,15 +204,15 @@ const HomePage = () => {
               </svg>
             </div>
 
-            <p className="text-xl mb-8">
+            <p className="text-[16px] mb-8">
               Exploring New Horizons with Innovative Engineering Solutions
             </p>
             <div className="space-x-4">
-              <button className="bg-sky-400 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-navy-900 transition-colors duration-300">
+              <button className="bg-sky-400 text-[15px] font-bold text-white px-8 py-3 rounded-full text-lg hover:bg-navy-900 transition-colors duration-300">
                 Explore Products
               </button>
               <Link to="/services">
-                <button className="bg-transparent text-white px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 transition-colors duration-300">
+                <button className="bg-transparent text-[15px] font-medium text-white px-8 py-3 rounded-full text-lg border border-white hover:bg-white/20 transition-colors duration-300">
                   Explore Services
                 </button>
               </Link>
@@ -221,7 +222,7 @@ const HomePage = () => {
       </div>
       {/* About Us Section */}
       <div
-        className="flex justify-center items-center h-screen bg-white -mt-32 "
+        className="flex  justify-center items-center h-screen bg-white -mt-32 "
         ref={aboutSectionRef}
       >
         <div
@@ -233,10 +234,10 @@ const HomePage = () => {
         >
           <AnimatedSection animation={slideInFromLeft}>
             <div className="mr-5">
-              <h2 className="text-4xl font-bold mb-6 text-navy-900 font-yaro">
+              <h2 className="text-[30px] text-[#1D3D71] font-bold mb-6 text-navy-900 font-yaro">
                 About Us
               </h2>
-              <p className="text-lg mb-5 leading-relaxed">
+              <p className="text-[17px] leading-[27px] font-medium mb-5 ">
                 Founded in 2022, we at Anvey are dedicated to delivering
                 innovative engineering solutions. Specializing in cutting-edge
                 technologies such as stimulation tools, artificial lift systems,
@@ -245,7 +246,7 @@ const HomePage = () => {
                 boost productivity.
               </p>
               <Link to="/contact">
-                <button className="bg-sky-400 text-white px-6 py-3 rounded-full text-xl font-semibold hover:bg-navy-900 transition-colors duration-300 mt-8">
+                <button className="bg-sky-400 text-white px-6 py-3 rounded-full text-[15px] font-bold uppercase hover:bg-navy-900 transition-colors duration-300 mt-8">
                   Contact Us
                 </button>
               </Link>
@@ -261,10 +262,12 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex w-[75%] mx-auto flex-col gap-20">
-        <h1 className="text-5xl font-bold font-yaro">| Our Services</h1>
+        <h1 className="text-5xl font-bold font-yaro animate-slideInLeft text-[#1D3D71]">
+          | Our Services
+        </h1>
         <EnhancedCarousel />
         <Link className="mx-auto mb-10 mt-20" to="/services">
-          <button className="text-white bg-blue-400 font-bold px-8 py-3 rounded-full text-lg border border-blue hover:bg-white/20 hover:text-blue-400 hover:border-blue-400 transition-colors duration-300">
+          <button className="text-white bg-blue-400 font-bold px-8 py-3 rounded-full text-lg border border-blue hover:bg-white/20 hover:text-blue-400 hover:border-blue-400 transition-colors duration-300 animate-slideInUp">
             View More
           </button>
         </Link>
@@ -275,7 +278,7 @@ const HomePage = () => {
       {/* Common Queries Section */}
       <div className="bg-white py-16">
         <div className="p-20 mx-auto text-center">
-          <h2 className="text-5xl text-left font-bold mb-10 text-navy-900 font-yaro">
+          <h2 className="text-5xl text-left font-bold mb-10 text-navy-900 font-yaro text-[#1D3D71]">
             Common Queries
           </h2>
           <p className="text-xl text-left mb-12">
@@ -314,7 +317,7 @@ const HomePage = () => {
       {/* Contact Section */}
       <div className="bg-white py-16">
         <div className="mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-navy-900 font-yaro">
+          <h2 className="text-4xl font-bold text-center mb-12 text-navy-900 font-yaro text-[#1D3D71]">
             Still have doubts? Let's Get In Touch
           </h2>
           <div className="flex justify-center space-x-16">

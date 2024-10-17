@@ -79,7 +79,7 @@
 .line {
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
-    transition: stroke-dashoffset 1s ease-in-out;
+    transition: stroke-dashoffset 2s ease-in-out;
 }
 
 .stroke-animate .line {

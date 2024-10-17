@@ -114,7 +114,7 @@ const About = () => {
       <div className="w-full py-20">
         <div className="mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           <AnimatedSection animation={slideInFromLeft}>
-            <div className="ml-28 md:w-1/2 text-left mr-10">
+            <div className="ml-28  text-left mr-10">
               <h2 className="text-4xl font-bold mb-4 underline-title-left text-[#1D3D71] font-yaro">
                 About Us
               </h2>
@@ -252,7 +252,7 @@ const About = () => {
         <div className="w-full py-20">
           <div className="max-w-7xl mx-auto text-center px-4">
             <AnimatedSection variants={slideInFromTop}>
-              <h2 className="text-4xl font-bold mb-12 underline-title text-[#1D3D71] font-yaro">
+              <h2 className="text-4xl mt-10 font-bold mb-12 underline-title text-[#1D3D71] font-yaro">
                 Meet Our Team
               </h2>
             </AnimatedSection>
