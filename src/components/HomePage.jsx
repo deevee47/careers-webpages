@@ -281,7 +281,7 @@ const HomePage = () => {
           <h2 className="text-5xl text-left font-bold mb-10 text-navy-900 font-yaro text-[#1D3D71]">
             Common Queries
           </h2>
-          <p className="text-xl text-left mb-12">
+          <p className="text-xl text-left mb-8">
             Your Answers to Common Questions
           </p>
 
@@ -289,7 +289,7 @@ const HomePage = () => {
             {queries.map((query, index) => (
               <div
                 key={query.id}
-                className="text-left border-b-2 border-black p-10"
+                className="text-left border-b-2 border-black p-3"
               >
                 <button
                   onClick={() => toggleQuery(index)}

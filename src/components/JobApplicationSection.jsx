@@ -37,7 +37,7 @@ const JobCard = ({ title, type, description, buttonColor }) => {
       <button
         className={`px-4 py-2 rounded-full text-white ${buttonColor} transition-colors duration-300 flex items-center justify-center`}
       >
-        <Briefcase className="w-4 h-4 mr-2" />
+        <Briefcase className="w-4 h-4 mr-2 " />
         APPLY NOW
       </button>
     </AnimatedSection>
@@ -51,28 +51,28 @@ const JobApplicationSection = () => {
       type: "FULL TIME / PART TIME",
       description:
         "Lead our gardening team in creating and maintaining beautiful landscapes for our clients.",
-      buttonColor: "bg-green-600 hover:bg-green-700",
+      buttonColor: "bg-[#00B3FF] hover:bg-[#1D3D71]",
     },
     {
       title: "Care Taker",
       type: "FULL TIME",
       description:
         "Provide compassionate care and support for individuals in need of assistance.",
-      buttonColor: "bg-orange-500 hover:bg-orange-600",
+      buttonColor: "bg-[#00B3FF] hover:bg-[#1D3D71]",
     },
     {
       title: "Field Inspector",
       type: "PART TIME",
       description:
         "Ensure quality and compliance by conducting thorough inspections of our projects.",
-      buttonColor: "bg-blue-500 hover:bg-blue-600",
+      buttonColor: "bg-[#00B3FF] hover:bg-[#1D3D71]",
     },
     {
       title: "Lawn Operator",
       type: "FULL TIME / PART TIME",
       description:
         "Maintain pristine lawns and green spaces using state-of-the-art equipment.",
-      buttonColor: "bg-green-600 hover:bg-green-700",
+      buttonColor: "bg-[#00B3FF] hover:bg-[#1D3D71]",
     },
   ];
 
@@ -80,7 +80,7 @@ const JobApplicationSection = () => {
     <section className="bg-gray-100 py-16">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold font-yaro text-[#1D3D71] mb-4">
             What Sets Us Apart
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -119,7 +119,7 @@ const JobApplicationSection = () => {
         </div>
 
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-green-800 mb-4">
+          <h2 className="text-4xl font-bold font-yaro text-[#1D3D71] mb-4">
             Let's Join With Us!
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -166,7 +166,7 @@ const JobApplicationSection = () => {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white py-3 rounded-full hover:bg-green-700 transition-colors duration-300 flex items-center justify-center"
+                className="w-full bg-[#00B3FF] hover:bg-[#1D3D71] text-white py-3 rounded-full  transition-colors duration-300 flex items-center justify-center"
               >
                 <Send className="w-5 h-5 mr-2" />
                 SEND APPLICATION
@@ -175,7 +175,9 @@ const JobApplicationSection = () => {
           </AnimatedSection>
         </div>
         <AnimatedSection className="text-center mb-16 mt-14                                                                      ">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Experience</h2>
+          <h2 className="text-4xl font-bold font-yaro text-[#1D3D71] mb-4">
+            Experience
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Join a team that offers unparalleled experiences and opportunities
             for growth.

@@ -58,7 +58,7 @@ const LastPage = () => {
         {/* Contact Us Section */}
         <section className="contact-section ">
           <div className="contact-content">
-            <h1 className="heading" ref={headerRef}>
+            <h1 className="heading font-yaro" ref={headerRef}>
               Contact Us
             </h1>
             <p ref={para1Ref}>
@@ -96,10 +96,10 @@ const LastPage = () => {
               className="bg-white p-10 rounded-lg flex-1 flex flex-col justify-between h-full lg:h-[500px] transition-all duration-700"
             >
               <div>
-                <h1 className="text-4xl font-bold text-green-800 mb-6">
+                <h1 className="text-4xl font-bold text-[#1D3D71] font-yaro mb-6">
                   Contact Us For More Info About Us!
                 </h1>
-                <p className="text-xl text-gray-600 mb-8">
+                <p className="text-xl text-[#1D3D71] mb-8">
                   Vivamus morbi praesentium habitasse voluptatibus ad.
                   Fringilla, adipiscing proident, tristique, et risus aliqua
                   sunt. Maiores cursus fusce nisi pulvinar metus.
@@ -109,7 +109,7 @@ const LastPage = () => {
                 <div className="mb-6 border border-gray-300 p-4 rounded-3xl flex items-center">
                   <FontAwesomeIcon
                     icon={faEnvelope}
-                    className="text-green-600 text-4xl mr-4"
+                    className="text-[#1D3D71] text-4xl mr-4"
                   />
                   <div>
                     <h2 className="text-2xl font-semibold text-gray-700">
@@ -122,7 +122,7 @@ const LastPage = () => {
                 <div className="border border-gray-300 p-4 rounded-3xl flex items-center">
                   <FontAwesomeIcon
                     icon={faPhone}
-                    className="text-green-850 text-4xl mr-4"
+                    className="text-[#1D3D71] text-4xl mr-4"
                   />
                   <div>
                     <h2 className="text-2xl font-semibold text-gray-700">
@@ -157,7 +157,7 @@ const LastPage = () => {
                       type="text"
                       id="name"
                       placeholder="Name"
-                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-green-100"
+                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-[#00B3FF26]"
                       required
                     />
                   </div>
@@ -172,7 +172,7 @@ const LastPage = () => {
                       type="email"
                       id="email"
                       placeholder="Email"
-                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-green-100"
+                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-[#00B3FF26]"
                       required
                     />
                   </div>
@@ -189,7 +189,7 @@ const LastPage = () => {
                       type="text"
                       id="subject"
                       placeholder="Subjects"
-                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-green-100"
+                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-[#00B3FF26]"
                       required
                     />
                   </div>
@@ -204,7 +204,7 @@ const LastPage = () => {
                       type="tel"
                       id="phone"
                       placeholder="Phone No"
-                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-green-100"
+                      className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-[#00B3FF26]"
                       required
                     />
                   </div>
@@ -220,13 +220,13 @@ const LastPage = () => {
                     id="message"
                     rows="4"
                     placeholder="Your message..."
-                    className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-green-100"
+                    className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-green-600 focus:border-green-600 bg-[#00B3FF26]"
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-500 transition"
+                  className="w-full bg-[#00B3FF] text-white py-3 rounded-lg font-semibold hover:bg-[#1D3D71] transition"
                 >
                   Submit
                 </button>

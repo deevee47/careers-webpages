@@ -9,12 +9,22 @@ const SecondPage = () => {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const scaleUp = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.6 } },
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  const fadeInDown = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   // Use Framer Motion's useInView hook for each section
@@ -60,7 +70,7 @@ const SecondPage = () => {
           animate="visible"
           variants={fadeInUp}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 font-yaro">
             Our Services
           </h1>
           <p className="text-lg md:text-2xl mb-6">
@@ -94,28 +104,25 @@ const SecondPage = () => {
         className="py-16 bg-white"
         initial="hidden"
         animate={servicesInView ? "visible" : "hidden"}
-        variants={fadeInUp}
+        variants={fadeInDown} // Come from down
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center text-gray-800">
+          <h2 className="text-4xl font-bold mb-4 text-center text-[#1D3D71] font-yaro">
             Services
           </h2>
           <p className="text-xl text-center mb-12 text-gray-600">
             Comprehensive services tailored to your needs
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-36">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-100 p-6 rounded-lg shadow-lg transition"
-                variants={scaleUp}
-                custom={index}
+                className="bg-gray-100 p-3 rounded-3xl shadow-lg transition"
+                variants={index < 3 ? slideFromLeft : slideFromRight} // First 3 from left, rest from right
                 animate={servicesInView ? "visible" : "hidden"}
               >
                 <service.icon className="w-16 h-16 mb-4 text-[#00B3FF]" />
-                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
-                  {service.title}
-                </h3>
+                <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
                 <p className="mb-4 text-gray-700">{service.description}</p>
                 <ul className="list-disc list-inside text-gray-600">
                   {service.benefits.map((benefit, idx) => (
@@ -133,26 +140,25 @@ const SecondPage = () => {
         className="py-16 bg-[#00B3FF26]"
         initial="hidden"
         animate={capabilitiesInView ? "visible" : "hidden"}
-        variants={fadeInUp}
+        variants={fadeInDown} // Come from down
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center text-gray-800">
+          <h2 className="text-4xl font-bold mb-4 text-center text-[#1D3D71] font-yaro">
             Our Capabilities
           </h2>
           <p className="text-xl text-center mb-12 text-gray-600">
             Delivering excellence through expertise and innovation
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-36">
             {capabilities.map((capability, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg transition"
-                variants={scaleUp}
-                custom={index}
+                className="bg-white p-3 rounded-3xl shadow-lg transition"
+                variants={index < 3 ? slideFromLeft : slideFromRight} // First 3 from left, rest from right
                 animate={capabilitiesInView ? "visible" : "hidden"}
               >
                 <capability.icon className="w-16 h-16 mb-4 text-[#00B3FF]" />
-                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800 ">
                   {capability.title}
                 </h3>
                 <p className="mb-4 text-gray-700">{capability.description}</p>
@@ -172,67 +178,53 @@ const SecondPage = () => {
         variants={fadeInUp}
       >
         <div className="container mx-auto px-0">
-          <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
+          <h2 className="text-4xl font-bold mb-8 text-center text-[#1D3D71] font-yaro">
             Download
           </h2>
           <div className="flex flex-col md:flex-row">
             {/* First Card */}
-            <div className="bg-red-500  shadow-lg p-8 flex-1 mb-0">
+            <div className="bg-red-500 shadow-lg p-8 flex-1 mb-0">
               {" "}
               {/* Changed border radius */}
               <h3 className="text-3xl font-semibold mb-4 text-white">
                 2023 Annual & Sustainability Report Highlights
               </h3>
               <p className="mb-4 text-white">
-                The 2023 Annual & Sustainability Report highlights our execution
-                on our strategic priorities and how we will accelerate into the
-                multi-year energy upcycle.
+                Discover our key achievements and sustainability efforts in 2023
               </p>
-              <motion.button
-                className="flex items-center bg-white hover:bg-gray-200 transition duration-300 text-red-500 py-2 px-4 rounded-full shadow-lg"
-                whileHover={{ scale: 1.05 }}
-              >
-                View ASR
-              </motion.button>
+              <button className="bg-white text-red-600 px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-100">
+                <Download className="w-5 h-5 inline-block mr-2" />
+                Download
+              </button>
             </div>
             {/* Second Card */}
-            <div className="bg-blue-500  shadow-lg p-8 flex-1 mb-0">
-              {" "}
-              {/* Changed border radius */}
-              <h3 className="text-3xl font-semibold mb-4 text-white">
-                2023 Annual & Sustainability Report
+            <div className="bg-blue-500 p-6 shadow-lg flex-1 mb-0">
+              <h3 className="text-3xl font-semibold mb-4 text-white ">
+                Stakeholder Relations Report
               </h3>
               <p className="mb-4 text-white">
-                The 2023 Annual & Sustainability Report highlights our execution
-                on our strategic priorities and how we will accelerate into the
-                multi-year energy upcycle.
+                Learn about our engagement with key stakeholders.
               </p>
-              <motion.button
-                className="flex items-center bg-white hover:bg-gray-200 transition duration-300 text-blue-500 py-2 px-4 rounded-full shadow-lg"
-                whileHover={{ scale: 1.05 }}
-              >
-                Download Report
-              </motion.button>
+              <button className="bg-white text-blue-600 px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-100">
+                <Download className="w-5 h-5 inline-block mr-2" />
+                Download
+              </button>
             </div>
-
             {/* Third Card */}
-            <div className="bg-green-500  shadow-lg p-8 flex-1 mb-0">
+            <div className="bg-green-500 shadow-lg p-8 flex-1 mb-0">
               {" "}
-              {/* Changed border radius */}
-              <h3 className="text-3xl font-semibold mb-4 text-white">
-                2023 ASR Limited Assurance Report
+              {/* Changed color */}
+              <h3 className="text-3xl font-semibold mb-4 text-white ">
+                Sustainability & Environmental Impact Report
               </h3>
               <p className="mb-4 text-white">
-                The 2023 Annual & Sustainability Report highlights our execution
-                on our strategic priorities and how we will accelerate into the
-                multi-year energy upcycle.
+                Explore our environmental initiatives and sustainability
+                projects.
               </p>
-              <motion.button
-                className="flex items-center bg-white hover:bg-gray-200 transition duration-300 text-green-500 py-2 px-4 rounded-full shadow-lg"
-                whileHover={{ scale: 1.05 }}
-              >
-                Read Report
-              </motion.button>
+              <button className="bg-white text-green-600 px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-100">
+                <Download className="w-5 h-5 inline-block mr-2" />
+                Download
+              </button>
             </div>
           </div>
         </div>

@@ -39,7 +39,7 @@ const Career = () => {
           animate="visible"
         >
           {/* Title */}
-          <motion.h1 className="text-5xl font-bold mb-4" variants={fadeInUp}>
+          <motion.h1 className="text-5xl font-bold mb-4 font-yaro " variants={fadeInUp}>
             Career
           </motion.h1>
 
