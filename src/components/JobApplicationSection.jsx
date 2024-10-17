@@ -77,7 +77,7 @@ const JobApplicationSection = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-white py-16">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl font-bold font-yaro text-[#1D3D71] mb-4">
@@ -89,7 +89,7 @@ const JobApplicationSection = () => {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <AnimatedSection className="bg-white p-6 rounded-lg shadow-2xl hover:shadow-lg transition-shadow duration-300">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
               Professional Growth
             </h3>
@@ -98,7 +98,7 @@ const JobApplicationSection = () => {
               programs.
             </p>
           </AnimatedSection>
-          <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <AnimatedSection className="bg-white p-6 rounded-lg shadow-2xl hover:shadow-lg transition-shadow duration-300">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
               Work-Life Balance
             </h3>
@@ -107,7 +107,7 @@ const JobApplicationSection = () => {
               your well-being.
             </p>
           </AnimatedSection>
-          <AnimatedSection className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <AnimatedSection className="bg-white p-6 rounded-lg shadow-2xl hover:shadow-lg transition-shadow duration-300">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
               Innovative Projects
             </h3>

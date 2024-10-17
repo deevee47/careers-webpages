@@ -262,7 +262,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex w-[75%] mx-auto flex-col gap-20">
-        <h1 className="text-5xl font-bold font-yaro animate-slideInLeft text-[#1D3D71]">
+        <h1 className="text-[40px] font-bold font-yaro animate-slideInLeft text-[#1D3D71]">
           | Our Services
         </h1>
         <EnhancedCarousel />
@@ -322,17 +322,17 @@ const HomePage = () => {
           </h2>
           <div className="flex justify-center space-x-16">
             <div className="bg-blue-100 p-4 px-10 rounded-[50px] w-72 shadow-lg shadow-blue-100 text-center ">
-              <FaMapMarkerAlt className="text-5xl text-sky-400 mb-4 mx-auto" />
+              <FaMapMarkerAlt className="text-3xl text-sky-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Address</h3>
               <p>Sepco Township Durgapur, WB</p>
             </div>
             <div className="bg-blue-100 p-4 px-10 rounded-[50px] w-72 shadow-lg  shadow-blue-100 text-center ">
-              <FaEnvelope className="text-5xl text-sky-400 mb-4 mx-auto" />
+              <FaEnvelope className="text-3xl text-sky-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <p>xyz@anvey.in</p>
             </div>
             <div className="bg-blue-100 p-4 px-10 rounded-[50px] w-72 shadow-lg shadow-blue-100 text-center ">
-              <FaPhoneAlt className="text-5xl text-sky-400 mb-4 mx-auto" />
+              <FaPhoneAlt className="text-3xl text-sky-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
               <p>+91 99999 99999</p>
             </div>
