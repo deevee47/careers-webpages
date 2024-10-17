@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @font-face {
     font-family: 'Yaro';
-    src: url('./fonts/Yaro-Regular.woff2') format('woff2'),
+    src: url('../src/fonts/yaro-regular.woff2') format('woff2'),
         /* Modern browsers */
-        url('./fonts/Yaro-Regular.woff') format('woff');
+        url('/fonts/Yaro-Regular.woff') format('woff');
     /* Older browsers */
     font-weight: normal;
     font-style: normal;

@@ -90,7 +90,7 @@ const About = () => {
     <div className="font-montserrat">
       {/* Landing Section */}
       <div className="relative mx-auto w-full py-40 flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] ">
-      <div className="absolute inset-0 bg-blue-500 z-20 opacity-60"></div>
+        <div className="absolute inset-0 bg-blue-500 z-20 opacity-60"></div>
         <img
           src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
           alt="Offshore Rig"
@@ -201,22 +201,24 @@ const About = () => {
           </h2>
 
           {/* Video Thumbnail Section */}
-          <div className="absolute w-[80vw] mx-auto">
-            {/* Video Thumbnail */}
-            <img
-              src="/xx.jpeg"
-              alt="Video Thumbnail"
-              className="rounded-lg shadow-lg w-full"
-            />
+          <AnimatedSection animation={fadeIn3D}>
+            <div className="absolute w-[80vw] mx-auto">
+              {/* Video Thumbnail */}
+              <img
+                src="/xx.jpeg"
+                alt="Video Thumbnail"
+                className="rounded-lg shadow-lg w-full"
+              />
 
-            {/* Play Button Icon (Center of Video) */}
-            <button
-              onClick={toggleModal}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-5xl bg-[#ffcc00] p-6 rounded-full shadow-lg focus:outline-none"
-            >
-              <FaPlay />
-            </button>
-          </div>
+              {/* Play Button Icon (Center of Video) */}
+              <button
+                onClick={toggleModal}
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-5xl bg-[#ffcc00] p-6 rounded-full shadow-lg focus:outline-none"
+              >
+                <FaPlay />
+              </button>
+            </div>
+          </AnimatedSection>
 
           {/* Fullscreen Modal for Video */}
           {isModalOpen && (
