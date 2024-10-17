@@ -177,7 +177,7 @@ const SecondPage = () => {
           </h2>
           <div className="flex flex-col md:flex-row">
             {/* First Card */}
-            <div className="bg-red-500 rounded-md shadow-lg p-8 flex-1 mb-0">
+            <div className="bg-red-500  shadow-lg p-8 flex-1 mb-0">
               {" "}
               {/* Changed border radius */}
               <h3 className="text-3xl font-semibold mb-4 text-white">
@@ -196,7 +196,7 @@ const SecondPage = () => {
               </motion.button>
             </div>
             {/* Second Card */}
-            <div className="bg-blue-500 rounded-md shadow-lg p-8 flex-1 mb-0">
+            <div className="bg-blue-500  shadow-lg p-8 flex-1 mb-0">
               {" "}
               {/* Changed border radius */}
               <h3 className="text-3xl font-semibold mb-4 text-white">
@@ -216,7 +216,7 @@ const SecondPage = () => {
             </div>
 
             {/* Third Card */}
-            <div className="bg-green-500 rounded-md shadow-lg p-8 flex-1 mb-0">
+            <div className="bg-green-500  shadow-lg p-8 flex-1 mb-0">
               {" "}
               {/* Changed border radius */}
               <h3 className="text-3xl font-semibold mb-4 text-white">
