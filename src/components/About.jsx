@@ -202,8 +202,8 @@ const About = () => {
 
           {/* Video Thumbnail Section */}
           <AnimatedSection animation={fadeIn3D}>
-            <div className="relative flex justify-center items-center">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[110vh]">
+            <div className="absolute flex justify-center items-center w-full">
+              <div className="relative top-1/2 left-1/2 mr-52 mt-96 transform -translate-x-1/2 -translate-y-1/2 w-[80%]">
                 {/* Video Thumbnail */}
                 <img
                   src="/xx.jpeg"
@@ -250,7 +250,7 @@ const About = () => {
 
       {/* Team Section */}
       <AnimatedSection>
-        <div className="w-full py-20">
+        <div className="w-full py-20 pt-10">
           <div className="max-w-7xl mx-auto text-center px-4">
             <AnimatedSection variants={slideInFromTop}>
               <h2 className="text-4xl mt-10 font-bold mb-12 underline-title text-[#1D3D71] font-yaro">
