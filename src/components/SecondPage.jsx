@@ -74,18 +74,18 @@ const SecondPage = () => {
           </motion.button>
         </motion.div>
         <div className="wave-container">
-            <svg
-              className="wave"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1440 320"
-            >
-              <path
-                fill="#ffffff"
-                fillOpacity="1"
-                d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,149.3C672,160,768,192,864,186.7C960,181,1056,139,1152,117.3C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </svg>
-          </div>
+          <svg
+            className="wave"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+          >
+            <path
+              fill="#ffffff"
+              fillOpacity="1"
+              d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,149.3C672,160,768,192,864,186.7C960,181,1056,139,1152,117.3C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Services Section */}
@@ -205,37 +205,75 @@ const SecondPage = () => {
       {/* Downloads Section */}
       <motion.section
         ref={downloadRef} // Use only one ref from useInView
-        className="py-16 bg-white"
+        className="pt-16 bg-gray-100" // Keep top padding; set bottom padding to 0 in cards
         initial="hidden"
         animate={downloadInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-0">
           <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
             Download
           </h2>
-          <div className="bg-gray-100 rounded-lg shadow-lg p-8">
-            {/* Image added here */}
-            <img
-              src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" // Replace with a relevant image URL
-              alt="Engineering Services Catalog"
-              className="w-full h-48 object-cover rounded-t-lg mb-6"
-            />
+          <div className="flex flex-col md:flex-row">
+            {/* First Card */}
+            <div className="bg-red-500 rounded-md shadow-lg p-8 flex-1 mb-0">
+              {" "}
+              {/* Changed border radius */}
+              <h3 className="text-3xl font-semibold mb-4 text-white">
+                2023 Annual & Sustainability Report Highlights
+              </h3>
+              <p className="mb-4 text-white">
+                The 2023 Annual & Sustainability Report highlights our execution
+                on our strategic priorities and how we will accelerate into the
+                multi-year energy upcycle.
+              </p>
+              <motion.button
+                className="flex items-center bg-white hover:bg-gray-200 transition duration-300 text-red-500 py-2 px-4 rounded-full shadow-lg"
+                whileHover={{ scale: 1.05 }}
+              >
+                View ASR
+              </motion.button>
+            </div>
 
-            <h3 className="text-3xl font-semibold mb-4 text-gray-800">
-              Engineering Services Catalog
-            </h3>
-            <p className="mb-4 text-gray-700">
-              Download our comprehensive catalog of engineering services and
-              solutions.
-            </p>
-            <motion.button
-              className="flex items-center bg-blue-600 hover:bg-blue-700 transition duration-300 text-white py-2 px-4 rounded-full shadow-lg"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Download className="mr-2" />
-              Download Now
-            </motion.button>
+            {/* Second Card */}
+            <div className="bg-blue-500 rounded-md shadow-lg p-8 flex-1 mb-0">
+              {" "}
+              {/* Changed border radius */}
+              <h3 className="text-3xl font-semibold mb-4 text-white">
+                2023 Annual & Sustainability Report
+              </h3>
+              <p className="mb-4 text-white">
+                The 2023 Annual & Sustainability Report highlights our execution
+                on our strategic priorities and how we will accelerate into the
+                multi-year energy upcycle.
+              </p>
+              <motion.button
+                className="flex items-center bg-white hover:bg-gray-200 transition duration-300 text-blue-500 py-2 px-4 rounded-full shadow-lg"
+                whileHover={{ scale: 1.05 }}
+              >
+                Download Report
+              </motion.button>
+            </div>
+
+            {/* Third Card */}
+            <div className="bg-green-500 rounded-md shadow-lg p-8 flex-1 mb-0">
+              {" "}
+              {/* Changed border radius */}
+              <h3 className="text-3xl font-semibold mb-4 text-white">
+                2023 ASR Limited Assurance Report
+              </h3>
+              <p className="mb-4 text-white">
+                The 2023 Annual & Sustainability Report highlights our execution
+                on our strategic priorities and how we will accelerate into the
+                multi-year energy upcycle.
+              </p>
+              <motion.button
+                className="flex items-center bg-white hover:bg-gray-200 transition duration-300 text-green-500 py-2 px-4 rounded-full shadow-lg"
+                whileHover={{ scale: 1.05 }}
+              >
+                Read Report
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.section>
