@@ -56,7 +56,7 @@ const LastPage = () => {
     <div>
       <div>
         {/* Contact Us Section */}
-        <section className="contact-section">
+        <section className="contact-section ">
           <div className="contact-content">
             <h1 className="heading" ref={headerRef}>
               Contact Us

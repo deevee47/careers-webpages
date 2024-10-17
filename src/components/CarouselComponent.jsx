@@ -17,106 +17,40 @@ const CarouselComponent = () => {
   return (
     <div className="max-w-screen-lg mx-auto py-10">
       <Slider {...settings}>
-        <div className="p-5">
-          <div className="bg-white shadow-md rounded-lg overflow-hidden h-full flex flex-col">
-            {" "}
-            {/* Fixed spelling of "bg-whilte" */}
-            <img src="" alt="Card 1" className="h-64 w-full object-cover" />
-            <div className="p-6 flex-1 flex flex-col">
-              <h2 className="text-2xl font-bold mb-2">
-                SURF and Subsea Development
-              </h2>
-              <p className="mt-2 text-gray-600 flex-grow">
-                Deep water development, incredible results.
-              </p>
-              <button className="mt-4 text-blue-600 flex items-center">
-                <span>DISCOVER MORE</span>
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 12h14M12 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+        {cardData.map((card, index) => (
+          <div key={index} className="p-4">
+            <div className="bg-white shadow-md rounded-lg overflow-hidden h-full flex flex-col">
+              <img
+                src={card.imageUrl}
+                alt={`Card ${index + 1}`}
+                className="h-64 w-full object-cover"
+              />
+              <div className="p-6 flex-1 flex flex-col">
+                <h2 className="text-2xl font-bold mb-2">{card.title}</h2>
+                <p className="mt-2 text-gray-600 flex-grow">
+                  {card.description}
+                </p>
+                <button className="mt-4 text-blue-600 flex items-center">
+                  <span>DISCOVER MORE</span>
+                  <svg
+                    className="ml-2 w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 12h14M12 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="p-4">
-          <div className="bg-white shadow-md rounded-lg overflow-hidden h-full flex flex-col">
-            <img
-              src="your-image-url-2.jpg"
-              alt="Card 2"
-              className="h-64 w-full object-cover"
-            />
-            <div className="p-6 flex-1 flex flex-col">
-              <h2 className="text-2xl font-bold mb-2">Conventional Projects</h2>
-              <p className="mt-2 text-gray-600 flex-grow">
-                Offshore platforms, a project springboard.
-              </p>
-              <button className="mt-4 text-blue-600 flex items-center">
-                <span>DISCOVER MORE</span>
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 12h14M12 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="p-4">
-          <div className="bg-white shadow-md rounded-lg overflow-hidden h-full flex flex-col">
-            <img
-              src="your-image-url-3.jpg"
-              alt="Card 3"
-              className="h-64 w-full object-cover"
-            />
-            <div className="p-6 flex-1 flex flex-col">
-              <h2 className="text-2xl font-bold mb-2">
-                Decommissioning Offshore
-              </h2>
-              <p className="mt-2 text-gray-600 flex-grow">
-                Objective: to reduce environmental impact to the minimum.
-              </p>
-              <button className="mt-4 text-blue-600 flex items-center">
-                <span>DISCOVER MORE</span>
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 12h14M12 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );
@@ -127,8 +61,6 @@ function NextArrow(props) {
   const { className, onClick } = props;
   return (
     <div className={`${className} text-black`} onClick={onClick}>
-      {" "}
-      {/* Fixed string interpolation */}
       <svg
         className="w-8 h-8"
         fill="none"
@@ -151,8 +83,6 @@ function PrevArrow(props) {
   const { className, onClick } = props;
   return (
     <div className={`${className} text-black`} onClick={onClick}>
-      {" "}
-      {/* Fixed string interpolation */}
       <svg
         className="w-8 h-8"
         fill="none"
@@ -170,5 +100,30 @@ function PrevArrow(props) {
     </div>
   );
 }
+
+// Sample card data
+const cardData = [
+  {
+    imageUrl: "/xx.jpeg",
+    title: "Innovative Marine Solutions",
+    description: "Advanced underwater technologies for exploration.",
+  },
+  {
+    imageUrl: "/xx.jpeg",
+    title: "Renewable Energy Projects",
+    description: "Harnessing nature to power our future efficiently.",
+  },
+  {
+    imageUrl: "/xx.jpeg",
+    title: "Sustainable Resource Management",
+    description: "Minimizing waste while maximizing resource usage.",
+  },
+  {
+    imageUrl: "/xx.jpeg",
+    title: "Oceanic Environmental Studies",
+    description: "Researching ecosystems to protect marine biodiversity.",
+  },
+];
+
 
 export default CarouselComponent;

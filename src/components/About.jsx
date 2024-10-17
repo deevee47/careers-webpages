@@ -90,6 +90,7 @@ const About = () => {
     <div className="font-montserrat">
       {/* Landing Section */}
       <div className="relative mx-auto w-full py-40 flex justify-center items-center bg-blue-50 overflow-hidden rounded-b-[200px] ">
+      <div className="absolute inset-0 bg-blue-500 z-20 opacity-60"></div>
         <img
           src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
           alt="Offshore Rig"
@@ -102,14 +103,13 @@ const About = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="text-5xl font-bold mb-4 font-yaro">About Us</h1>
+          <h1 className="text-5xl font-bold mb-4 font-yaro z-50">About Us</h1>
           <h3 className="text-xl w-[50%] mx-auto mb-4">
             Explore our journey and mission as industry leaders, committed to
             transforming the oil and gas sector with innovative solutions.
           </h3>
         </motion.div>
       </div>
-
       {/* About Us Section */}
       <div className="w-full py-20">
         <div className="mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -139,7 +139,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       {/* Pillars of Success Section */}
       <AnimatedSection>
         <div className="w-full py-20">
@@ -194,9 +193,7 @@ const About = () => {
           </div>
         </div>
       </AnimatedSection>
-
       {/* Expert Section */}
-
       <div className="w-full pb-[30vw] pt-10 mb-80 bg-[#1D3D71] relative">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <h2 className="text-4xl font-bold mb-8 font-yaro">
@@ -246,7 +243,6 @@ const About = () => {
           )}
         </div>
       </div>
-
       {/* Team Section */}
       <AnimatedSection>
         <div className="w-full py-20">
@@ -302,7 +298,6 @@ const About = () => {
           </div>
         </div>
       </AnimatedSection>
-
       <div className="w-full bg-[#1D3D71] py-20">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <AnimatedSection animation={slideInFromBottom}>
