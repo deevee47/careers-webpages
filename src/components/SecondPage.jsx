@@ -1,6 +1,6 @@
 import React from "react";
 import { Download } from "lucide-react";
-import { services, capabilities, projects } from "../../data.js";
+import { services, capabilities, projects, products } from "../../data.js"; // Assuming products data is also in data.js
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CarouselComponent from "./CarouselComponent.jsx"; // Import the carousel component
@@ -41,6 +41,10 @@ const SecondPage = () => {
     threshold: 0.1,
   });
   const [downloadRef, downloadInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [productsRef, productsInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -167,12 +171,45 @@ const SecondPage = () => {
           </div>
         </div>
       </motion.section>
+      {/* Our Products Section */}
+      <motion.section
+        ref={productsRef}
+        className="py-16 bg-white"
+        initial="hidden"
+        animate={productsInView ? "visible" : "hidden"}
+        variants={fadeInUp}
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-4 text-center text-[#1D3D71] font-yaro">
+            Our Products
+          </h2>
+          <p className="text-xl text-center mb-12 text-gray-600">
+            Explore our innovative product offerings
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-36">
+            {products.map((product, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-200 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }} // Adds a hover effect
+                variants={index % 2 === 0 ? slideFromLeft : slideFromRight}
+              >
+                <product.icon className="w-16 h-16 mb-4 text-[#1D3D71]" />
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
+                  {product.title}
+                </h3>
+                <p className="text-gray-600">{product.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
       {/* Carousel Section */}
       <CarouselComponent /> {/* Add the Carousel component here */}
       {/* Downloads Section */}
       <motion.section
-        ref={downloadRef} // Use only one ref from useInView
-        className="pt-16 bg-gray-100" // Keep top padding; set bottom padding to 0 in cards
+        ref={downloadRef}
+        className="pt-16 bg-gray-100"
         initial="hidden"
         animate={downloadInView ? "visible" : "hidden"}
         variants={fadeInUp}
@@ -184,8 +221,6 @@ const SecondPage = () => {
           <div className="flex flex-col md:flex-row">
             {/* First Card */}
             <div className="bg-red-500 shadow-lg p-8 flex-1 mb-0">
-              {" "}
-              {/* Changed border radius */}
               <h3 className="text-3xl font-semibold mb-4 text-white">
                 2023 Annual & Sustainability Report Highlights
               </h3>
@@ -199,7 +234,7 @@ const SecondPage = () => {
             </div>
             {/* Second Card */}
             <div className="bg-blue-500 p-6 shadow-lg flex-1 mb-0">
-              <h3 className="text-3xl font-semibold mb-4 text-white ">
+              <h3 className="text-3xl font-semibold mb-4 text-white">
                 Stakeholder Relations Report
               </h3>
               <p className="mb-4 text-white">
@@ -212,9 +247,7 @@ const SecondPage = () => {
             </div>
             {/* Third Card */}
             <div className="bg-green-500 shadow-lg p-8 flex-1 mb-0">
-              {" "}
-              {/* Changed color */}
-              <h3 className="text-3xl font-semibold mb-4 text-white ">
+              <h3 className="text-3xl font-semibold mb-4 text-white">
                 Sustainability & Environmental Impact Report
               </h3>
               <p className="mb-4 text-white">
