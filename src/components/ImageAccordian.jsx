@@ -39,7 +39,7 @@ const ImageAccordion = () => {
         {images.map((image, index) => (
           <div
             key={image.id}
-            className={`relative overflow-hidden h-[96vh] transition-all duration-500 ${
+            className={`relative overflow-hidden h-[70vh] transition-all duration-500 ${
               activeIndex === index ? "w-3/5" : "w-1/5"
             }`}
             onMouseEnter={() => setActiveIndex(index)}

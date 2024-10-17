@@ -315,7 +315,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* Contact Section */}
-      <div className="bg-white py-16">
+      <div className="bg-white -mt-6">
         <div className="mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-navy-900 font-yaro text-[#1D3D71]">
             Still have doubts? Let's Get In Touch
