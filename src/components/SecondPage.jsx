@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import { services, capabilities, projects } from "../../data.js";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import CarouselComponent from "./CarouselComponent.jsx"; // Import the carousel component
 
 const SecondPage = () => {
   // Animation variants
@@ -87,10 +88,9 @@ const SecondPage = () => {
           </svg>
         </div>
       </section>
-
       {/* Services Section */}
       <motion.section
-        ref={servicesRef} // Use only one ref from useInView
+        ref={servicesRef}
         className="py-16 bg-white"
         initial="hidden"
         animate={servicesInView ? "visible" : "hidden"}
@@ -127,10 +127,9 @@ const SecondPage = () => {
           </div>
         </div>
       </motion.section>
-
       {/* Capabilities Section */}
       <motion.section
-        ref={capabilitiesRef} // Use only one ref from useInView
+        ref={capabilitiesRef}
         className="py-16 bg-[#00B3FF26]"
         initial="hidden"
         animate={capabilitiesInView ? "visible" : "hidden"}
@@ -162,46 +161,8 @@ const SecondPage = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* Projects Section */}
-      <motion.section
-        ref={projectsRef} // Use only one ref from useInView
-        className="py-16 bg-[#F8F9FA]"
-        initial="hidden"
-        animate={projectsInView ? "visible" : "hidden"}
-        variants={fadeInUp}
-      >
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center text-gray-800">
-            Our Projects
-          </h2>
-          <p className="text-xl text-center mb-12 text-gray-600">
-            Innovative projects for a sustainable future
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg transition"
-                variants={scaleUp}
-                custom={index}
-                animate={projectsInView ? "visible" : "hidden"}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover rounded-t-lg mb-4"
-                />
-                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
-                  {project.title}
-                </h3>
-                <p className="text-gray-700">{project.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
+      {/* Carousel Section */}
+      <CarouselComponent /> {/* Add the Carousel component here */}
       {/* Downloads Section */}
       <motion.section
         ref={downloadRef} // Use only one ref from useInView
@@ -234,7 +195,6 @@ const SecondPage = () => {
                 View ASR
               </motion.button>
             </div>
-
             {/* Second Card */}
             <div className="bg-blue-500 rounded-md shadow-lg p-8 flex-1 mb-0">
               {" "}

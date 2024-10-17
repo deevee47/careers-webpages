@@ -130,11 +130,11 @@ const About = () => {
               </button>
             </div>
           </AnimatedSection>
-          <div className="w-full mt-8 md:mt-0">
+          <div className="mt-8 md:mt-0 w-full">
             <img
               src="/xx.jpeg"
               alt="Oil Rig"
-              className="rounded-lg shadow-lg w-[80%] h-screen"
+              className="rounded-lg shadow-lg w-[70%] h-[60%]"
             />
           </div>
         </div>
@@ -197,14 +197,14 @@ const About = () => {
 
       {/* Expert Section */}
 
-      <div className="w-full pb-[30vw] pt-10 mb-72 bg-[#1D3D71] relative">
+      <div className="w-full pb-[30vw] pt-10 mb-80 bg-[#1D3D71] relative">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <h2 className="text-4xl font-bold mb-8 font-yaro">
             Listen What Our Experts Have To Say
           </h2>
 
           {/* Video Thumbnail Section */}
-          <div className="relative w-[80vw] mx-auto">
+          <div className="absolute w-[80vw] mx-auto">
             {/* Video Thumbnail */}
             <img
               src="/xx.jpeg"

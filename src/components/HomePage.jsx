@@ -6,6 +6,7 @@ import CareerParallax from "./CareerParallax";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ImageAccordion from "./ImageAccordian";
 
 const slideInFromLeft = {
   hidden: { x: -200 }, // Sharp slide in from the left
@@ -268,7 +269,8 @@ const HomePage = () => {
           </button>
         </Link>
       </div>
-      <Carousel />
+
+      <ImageAccordion />
       <CareerParallax />
       {/* Common Queries Section */}
       <div className="bg-white py-16">
