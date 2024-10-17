@@ -193,7 +193,7 @@ const About = () => {
           </div>
         </div>
       </AnimatedSection>
-      {/* Expert Section */}
+      
       <div className="w-full pb-[30vw] pt-10 mb-80 bg-[#1D3D71] relative">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <h2 className="text-4xl font-bold mb-8 font-yaro">
@@ -202,21 +202,23 @@ const About = () => {
 
           {/* Video Thumbnail Section */}
           <AnimatedSection animation={fadeIn3D}>
-            <div className="absolute w-[80vw] mx-auto">
-              {/* Video Thumbnail */}
-              <img
-                src="/xx.jpeg"
-                alt="Video Thumbnail"
-                className="rounded-lg shadow-lg w-full"
-              />
+            <div className="relative flex justify-center items-center">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[110vh]">
+                {/* Video Thumbnail */}
+                <img
+                  src="/xx.jpeg"
+                  alt="Video Thumbnail"
+                  className="rounded-lg shadow-lg w-full"
+                />
 
-              {/* Play Button Icon (Center of Video) */}
-              <button
-                onClick={toggleModal}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-5xl bg-[#ffcc00] p-6 rounded-full shadow-lg focus:outline-none"
-              >
-                <FaPlay />
-              </button>
+                {/* Play Button Icon (Center of Video) */}
+                <button
+                  onClick={toggleModal}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-5xl bg-[#ffcc00] p-6 rounded-full shadow-lg focus:outline-none"
+                >
+                  <FaPlay />
+                </button>
+              </div>
             </div>
           </AnimatedSection>
 
@@ -245,6 +247,7 @@ const About = () => {
           )}
         </div>
       </div>
+
       {/* Team Section */}
       <AnimatedSection>
         <div className="w-full py-20">
