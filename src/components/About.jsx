@@ -141,17 +141,17 @@ const About = () => {
       </div>
       {/* Pillars of Success Section */}
       <AnimatedSection>
-        <div className="w-full py-20">
+        <div className="w-full flex justify-center py-20">
           <div className="max-w-7xl mx-auto text-center text-black px-4">
             <h2 className="text-4xl font-bold underline-title mb-8 font-yaro">
               The Pillars of Our Success
             </h2>
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+              className="mx-auto w-[80%] grid grid-cols-1 md:grid-cols-3 gap-4 text-center"
               variants={staggerChildren}
             >
               <motion.div
-                className="bg-[#00B3FF26] text-black p-6 rounded-lg shadow-lg"
+                className="bg-[#00B3FF26] text-black p-3 rounded-lg shadow-lg"
                 variants={slideInFromLeft} // Left card slides in from the left
                 whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
               >
@@ -164,7 +164,7 @@ const About = () => {
                 </p>
               </motion.div>
               <motion.div
-                className="bg-[#00B3FF26] text-black p-6 rounded-lg shadow-lg"
+                className="bg-[#00B3FF26] text-black p-3 rounded-lg shadow-lg"
                 variants={fadeInFromBottom} // Middle card slides in from bottom
                 whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
               >
@@ -177,7 +177,7 @@ const About = () => {
                 </p>
               </motion.div>
               <motion.div
-                className="bg-[#00B3FF26] text-black p-6 rounded-lg shadow-lg"
+                className="bg-[#00B3FF26] text-black p-3 rounded-lg shadow-lg"
                 variants={fadeInFromRight} // Right card slides in from the right
                 whileHover={{ scale: 1.05, backgroundColor: "#00B3FF40" }}
               >

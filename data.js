@@ -99,6 +99,18 @@ export const products = [
       "Intelligent control systems for optimizing industrial processes and energy management.",
   },
   {
+    icon: Package,
+    title: "Smart Sensors",
+    description:
+      "Advanced sensors for real-time monitoring and data collection in various engineering applications.",
+  },
+  {
+    icon: Cpu,
+    title: "Control Systems",
+    description:
+      "Intelligent control systems for optimizing industrial processes and energy management.",
+  },
+  {
     icon: Battery,
     title: "Energy Storage Solutions",
     description:
@@ -113,26 +125,7 @@ export const products = [
 ];
 
 export const services = [
-  {
-    icon: Wrench,
-    title: "Engineering Solutions",
-    description: "Cutting-edge engineering solutions for complex projects.",
-    benefits: [
-      "Innovative designs",
-      "Cost-effective solutions",
-      "Timely delivery",
-    ],
-  },
-  {
-    icon: Zap,
-    title: "Energy Optimization",
-    description: "Optimize energy consumption and improve efficiency.",
-    benefits: [
-      "Reduced energy costs",
-      "Improved sustainability",
-      "Enhanced performance",
-    ],
-  },
+  
   {
     icon: Recycle,
     title: "Environmental Services",

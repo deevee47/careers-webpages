@@ -117,22 +117,19 @@ const SecondPage = () => {
           <p className="text-xl text-center mb-12 text-gray-600">
             Comprehensive services tailored to your needs
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-36">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-36">
+            {products.map((product, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-100 p-3 rounded-3xl shadow-lg transition"
-                variants={index < 3 ? slideFromLeft : slideFromRight} // First 3 from left, rest from right
-                animate={servicesInView ? "visible" : "hidden"}
+                className="bg-gray-200 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }} // Adds a hover effect
+                variants={index % 2 === 0 ? slideFromLeft : slideFromRight}
               >
-                <service.icon className="w-16 h-16 mb-4 text-[#00B3FF]" />
-                <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
-                <p className="mb-4 text-gray-700">{service.description}</p>
-                <ul className="list-disc list-inside text-gray-600">
-                  {service.benefits.map((benefit, idx) => (
-                    <li key={idx}>{benefit}</li>
-                  ))}
-                </ul>
+                <product.icon className="w-16 h-16 mb-4 text-[#1D3D71]" />
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
+                  {product.title}
+                </h3>
+                <p className="text-gray-600">{product.description}</p>
               </motion.div>
             ))}
           </div>
@@ -153,7 +150,7 @@ const SecondPage = () => {
           <p className="text-xl text-center mb-12 text-gray-600">
             Delivering excellence through expertise and innovation
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-36">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-36">
             {capabilities.map((capability, index) => (
               <motion.div
                 key={index}
@@ -179,14 +176,14 @@ const SecondPage = () => {
         animate={productsInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
-        <div className="container mx-auto px-4">
+        <div className=" mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4 text-center text-[#1D3D71] font-yaro">
             Our Products
           </h2>
           <p className="text-xl text-center mb-12 text-gray-600">
             Explore our innovative product offerings
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-36">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-36">
             {products.map((product, index) => (
               <motion.div
                 key={index}
