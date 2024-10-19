@@ -75,6 +75,27 @@
     bottom: -10%;
     transform: translateX(-50%);
 }
+.underline-title-d {
+    margin-left: 44%;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.underline-title-d::after {
+    content: '';
+
+    position: absolute;
+    width: 100px;
+    /* Adjust the width to your liking */
+    height: 4px;
+    /* Adjust the thickness to your liking */
+    background-color: #1D3D71;
+    /* Color of the underline */
+    left: 53%;
+    bottom:-10%;
+    transform: translateX(-50%);
+}
 
 .line {
     stroke-dasharray: 500;

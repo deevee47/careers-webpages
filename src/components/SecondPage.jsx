@@ -216,13 +216,13 @@ const SecondPage = () => {
         animate={downloadInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
-        <div className="container mx-auto px-0">
-          <h2 className="text-4xl font-bold mb-8 text-center text-[#1D3D71] font-yaro">
+        <div className="container mx-auto justify-center px-0">
+          <h2 className=" underline-title-d mx-auto text-4xl font-bold mb-8 text-center text-[#1D3D71] font-yaro">
             Download
           </h2>
           <div className="flex flex-col md:flex-row">
             {/* First Card */}
-            <div className="bg-red-500 shadow-lg p-8 flex-1 mb-0">
+            <div className=" rounded-tl-2xl bg-red-500 shadow-lg p-8 flex-1 mb-0">
               <h3 className="text-3xl font-semibold mb-4 text-white">
                 2023 Annual & Sustainability Report Highlights
               </h3>
@@ -248,7 +248,7 @@ const SecondPage = () => {
               </button>
             </div>
             {/* Third Card */}
-            <div className="bg-green-500 shadow-lg p-8 flex-1 mb-0">
+            <div className=" rounded-tr-2xl bg-green-500 shadow-lg p-8 flex-1 mb-0">
               <h3 className="text-3xl font-semibold mb-4 text-white">
                 Sustainability & Environmental Impact Report
               </h3>
