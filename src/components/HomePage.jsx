@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ImageAccordion from "./ImageAccordian";
+import CommonQueries from "./CommonQueries";
 
 const slideInFromLeft = {
   hidden: { x: -200 }, // Sharp slide in from the left
@@ -278,40 +279,14 @@ const HomePage = () => {
       {/* Common Queries Section */}
       <div className="bg-white py-16">
         <div className="p-20 mx-auto text-center">
-          <h2 className="text-5xl text-left font-bold mb-10 text-navy-900 font-yaro text-[#1D3D71]">
+          <h2 className="text-5xl text-left font-bold mb-10 text-[#1D3D71] font-yaro">
             Common Queries
           </h2>
           <p className="text-xl text-left mb-8">
             Your Answers to Common Questions
           </p>
 
-          <div className="grid grid-cols-2 gap-8">
-            {queries.map((query, index) => (
-              <div
-                key={query.id}
-                className="text-left border-b-2 border-black p-3"
-              >
-                <button
-                  onClick={() => toggleQuery(index)}
-                  className="w-full text-left text-lg font-semibold mb-2 flex justify-between items-center"
-                >
-                  <span>
-                    {query.id}. {query.question}
-                  </span>
-                  <span>{activeIndex === index ? "▲" : "▶"}</span>
-                </button>
-                <div
-                  className={`transition-all duration-500 overflow-hidden ${
-                    activeIndex === index
-                      ? "max-h-96 opacity-100 p-4"
-                      : "max-h-0 opacity-0 p-0"
-                  } bg-gray-100 rounded-lg`}
-                >
-                  <p className="mt-2">{query.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CommonQueries queries={queries} />
         </div>
       </div>
       {/* Contact Section */}

@@ -128,7 +128,7 @@ export const services = [
   
   {
     icon: Recycle,
-    title: "Environmental Services",
+    title: "Environmental",
     description: "Sustainable practices for a greener future.",
     benefits: [
       "Reduced environmental impact",
@@ -139,7 +139,7 @@ export const services = [
   {
     icon: Shield,
     title: "Safety Management",
-    description: "Comprehensive safety solutions for your projects.",
+    description: "Comprehensive safety solutions for your.",
     benefits: [
       "Reduced accidents",
       "Improved workplace safety",
@@ -149,7 +149,7 @@ export const services = [
   {
     icon: Users,
     title: "Consulting Services",
-    description: "Expert advice to guide your engineering decisions.",
+    description: "Expert advice to guide your engineering.",
     benefits: [
       "Access to industry experts",
       "Tailored solutions",
@@ -159,7 +159,7 @@ export const services = [
   {
     icon: BarChart,
     title: "Project Management",
-    description: "Efficient management of complex engineering projects.",
+    description: "Efficient management of complex.",
     benefits: ["On-time delivery", "Budget optimization", "Quality assurance"],
   },
 ];

@@ -248,61 +248,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Team Section */}
-      <AnimatedSection>
-        <div className="w-full py-20 pt-10">
-          <div className="max-w-7xl mx-auto text-center px-4">
-            <AnimatedSection variants={slideInFromTop}>
-              <h2 className="text-4xl mt-10 font-bold mb-12 underline-title text-[#1D3D71] font-yaro">
-                Meet Our Team
-              </h2>
-            </AnimatedSection>
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
-              variants={staggerChildren}
-            >
-              {[
-                {
-                  name: "Jade Buckner",
-                  role: "CEO",
-                  img: "https://randomuser.me/api/portraits/women/44.jpg",
-                },
-                {
-                  name: "John Smith",
-                  role: "Technician",
-                  img: "https://randomuser.me/api/portraits/men/44.jpg",
-                },
-                {
-                  name: "Kathryn Murphy",
-                  role: "Engineer",
-                  img: "https://randomuser.me/api/portraits/women/45.jpg",
-                },
-                {
-                  name: "Darrell Steward",
-                  role: "Employee",
-                  img: "https://randomuser.me/api/portraits/men/45.jpg",
-                },
-              ].map((member, index) => (
-                <AnimatedSection animation={fadeIn3D}>
-                  <motion.div
-                    key={index}
-                    className="flex flex-col items-center py-14 rounded-[40%] transition-colors duration-300 hover:bg-blue-100"
-                    variants={fadeInFromBottom}
-                  >
-                    <img
-                      src={member.img}
-                      alt={member.name}
-                      className="w-40 h-40 rounded-full mb-4 shadow-lg"
-                    />
-                    <h3 className="text-lg">{member.name}</h3>
-                    <p className="text-sm">{member.role}</p>
-                  </motion.div>
-                </AnimatedSection>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </AnimatedSection>
       <div className="w-full bg-[#1D3D71] py-20">
         <div className="max-w-7xl mx-auto text-center text-white px-4">
           <AnimatedSection animation={slideInFromBottom}>
